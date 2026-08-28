@@ -1,0 +1,109 @@
+# Mise en route
+
+## 1. Créer le repo
+
+```bash
+cd "/Users/olivierfalahi/Documents/Perso/veille rust"
+gh repo create veille-rust --public --source=. --remote=origin --push
+```
+
+Si tu choisis un autre nom, remplace `veille-rust` dans :
+- `config.toml` → `base_url`
+- `templates/base.html` → les liens GitHub
+- `collector/src/render.rs` → les URLs du README
+
+## 2. Activer GitHub Pages
+
+**Settings → Pages → Source : `GitHub Actions`** (surtout pas « Deploy from a branch »).
+Sans ça, `deploy-pages` échoue avec une erreur peu explicite.
+
+Le site sera sur `https://<ton-user>.github.io/veille-rust/`.
+
+## 3. Autoriser le bot à pousser
+
+**Settings → Actions → General → Workflow permissions → « Read and write permissions »**.
+Sinon le `git push` du workflow renvoie 403.
+
+## 4. Premier run
+
+Onglet **Actions → veille → Run workflow**. Coche `dry_run` pour un essai à blanc.
+
+## 5. Optionnel — notification Discord
+
+Serveur Discord → Paramètres du salon → Intégrations → Webhooks → Nouveau webhook → copier l'URL.
+
+**Settings → Secrets and variables → Actions → New repository secret**
+- Nom : `DISCORD_WEBHOOK_URL`
+- Valeur : l'URL du webhook
+
+Le step est automatiquement sauté tant que ce secret n'existe pas.
+
+> Pour **Slack** à la place : le payload JSON `{"content": …}` devient `{"text": …}`
+> dans `.github/workflows/veille.yml`, et le secret s'appelle `SLACK_WEBHOOK_URL`.
+> Slack n'accepte pas la syntaxe `[titre](url)` : il faut `<url|titre>`.
+
+## 6. Optionnel — label pour l'issue hebdo
+
+```bash
+gh label create veille --color 0E8A16 --description "Récap hebdomadaire"
+```
+
+Le workflow retombe sur une création sans label si celui-ci n'existe pas.
+
+---
+
+# Usage quotidien
+
+```bash
+# Essai à blanc : collecte et affiche, n'écrit rien
+cargo run --release --manifest-path collector/Cargo.toml -- --dry-run
+
+# Run complet en local (écrit data/, content/, README.md)
+cargo run --release --manifest-path collector/Cargo.toml
+
+# Récap hebdo dans data/weekly.md
+cargo run --release --manifest-path collector/Cargo.toml -- --weekly
+
+# Prévisualiser le site (zola doit être installé : brew install zola)
+zola serve
+```
+
+## Ajouter une source
+
+Un bloc dans `sources.toml`, puis `--dry-run` pour vérifier qu'elle répond :
+
+```toml
+[[source]]
+id     = "mon-blog"
+kind   = "feed"        # feed | hn_algolia | crates_io
+url    = "https://exemple.com/feed.xml"
+tags   = ["blog"]
+weight = 5             # score de base = weight × 10
+limit  = 10            # optionnel, plafonne les flux bavards
+```
+
+## Régler le bruit
+
+- **Trop d'items ?** monte `min_score` dans `sources.toml`, ou baisse le `weight` des sources bavardes.
+- **Une source noie le reste ?** mets-lui un `limit`.
+- **Rien ne remonte ?** `min_score` est trop haut : un item vaut `weight × 10` + bonus.
+
+## Repartir de zéro
+
+```bash
+rm data/seen.jsonl              # tout sera re-collecté au prochain run
+rm -rf data/items content/digests/*.md
+```
+
+---
+
+# Points de vigilance
+
+| Sujet | À savoir |
+|---|---|
+| **Cron désactivé** | GitHub coupe les `schedule` après 60 jours sans activité sur le repo. Les commits du bot suffisent à le garder actif — sauf si la veille ne trouve jamais rien. |
+| **Retard du cron** | `17 6 * * *` et pas `0 6 * * *` : les heures rondes sont saturées, les jobs partent en retard ou sont abandonnés. |
+| **Pas de chaînage** | Un push fait avec `GITHUB_TOKEN` ne déclenche aucun autre workflow. C'est pourquoi collecte, build et deploy sont dans le **même** workflow. |
+| **Reddit en CI** | Reddit renvoie souvent 403 aux IP de datacenter. Chaque source est isolée : un échec est loggé, le run continue. |
+| **crates.io** | Exige un User-Agent identifiable (défini dans `sources.toml`) et fait évoluer son schéma JSON — `most_recently_updated` est devenu `just_updated`. |
+| **Deux runs le même jour** | Le digest du jour est reconstruit depuis l'archive, pas depuis les seules nouveautés du run. |

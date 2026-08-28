@@ -1,0 +1,147 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Configuration de la veille. C'est LE fichier à faire vivre.
+# Conseil : n'ajoute une source que si les précédentes te servent vraiment.
+# ─────────────────────────────────────────────────────────────────────────────
+
+user_agent = "veille-rust-bot/0.1 (+https://github.com/olivierfalahi/veille-rust)"
+
+# Un item doit atteindre ce score pour apparaître dans le digest.
+min_score = 30
+
+# Bonus de score si le motif apparaît dans le titre ou le résumé (insensible à la casse).
+[[boost]]
+pattern = "async"
+points  = 8
+[[boost]]
+pattern = "unsafe"
+points  = 6
+[[boost]]
+pattern = "performance"
+points  = 6
+[[boost]]
+pattern = "compiler"
+points  = 5
+[[boost]]
+pattern = "release"
+points  = 5
+[[boost]]
+pattern = "embedded"
+points  = 4
+[[boost]]
+pattern = "wasm"
+points  = 4
+
+# ── Officiel / releases ──────────────────────────────────────────────────────
+
+[[source]]
+id     = "rust-blog"
+kind   = "feed"
+url    = "https://blog.rust-lang.org/feed.xml"
+tags   = ["officiel"]
+weight = 10
+
+[[source]]
+id     = "inside-rust"
+kind   = "feed"
+url    = "https://blog.rust-lang.org/inside-rust/feed.xml"
+tags   = ["officiel", "compilo"]
+weight = 8
+
+[[source]]
+id     = "rustc-releases"
+kind   = "feed"
+url    = "https://github.com/rust-lang/rust/releases.atom"
+tags   = ["release"]
+weight = 9
+limit  = 5
+
+[[source]]
+id     = "rustsec"
+kind   = "feed"
+url    = "https://rustsec.org/feed.xml"
+tags   = ["securite"]
+weight = 9
+
+[[source]]
+id     = "internals"
+kind   = "feed"
+url    = "https://internals.rust-lang.org/latest.rss"
+tags   = ["compilo", "design"]
+weight = 4
+limit  = 15
+
+# ── Communauté ───────────────────────────────────────────────────────────────
+
+[[source]]
+id     = "twir"
+kind   = "feed"
+url    = "https://this-week-in-rust.org/rss.xml"
+tags   = ["newsletter", "must-read"]
+weight = 10
+
+[[source]]
+id     = "lobsters"
+kind   = "feed"
+url    = "https://lobste.rs/t/rust.rss"
+tags   = ["communaute"]
+weight = 6
+
+# Reddit renvoie souvent 403 depuis les runners GitHub (IP datacenter).
+# La source est traitée en best-effort : un échec n'interrompt pas le run.
+[[source]]
+id     = "reddit"
+kind   = "feed"
+url    = "https://www.reddit.com/r/rust/top/.rss?t=week"
+tags   = ["communaute"]
+weight = 5
+limit  = 15
+
+[[source]]
+id         = "hn"
+kind       = "hn_algolia"
+query      = "rust"
+tags       = ["communaute"]
+weight     = 6
+min_points = 40
+
+# ── Écosystème crates ────────────────────────────────────────────────────────
+
+[[source]]
+id     = "crates-new"
+kind   = "crates_io"
+tags   = ["crates"]
+weight        = 3
+min_downloads = 20000   # sans ce seuil, crates.io déverse des dizaines de crates anonymes par run
+
+# Releases des crates que tu suis. Ajoute/retire librement.
+[[source]]
+id     = "rel-tokio"
+kind   = "feed"
+url    = "https://github.com/tokio-rs/tokio/releases.atom"
+tags   = ["release", "async"]
+weight = 6
+limit  = 3
+
+[[source]]
+id     = "rel-axum"
+kind   = "feed"
+url    = "https://github.com/tokio-rs/axum/releases.atom"
+tags   = ["release", "web"]
+weight = 5
+limit  = 3
+
+[[source]]
+id     = "rel-serde"
+kind   = "feed"
+url    = "https://github.com/serde-rs/serde/releases.atom"
+tags   = ["release"]
+weight = 5
+limit  = 3
+
+[[source]]
+id     = "rel-bevy"
+kind   = "feed"
+url    = "https://github.com/bevyengine/bevy/releases.atom"
+tags   = ["release", "gamedev"]
+weight = 5
+limit  = 3

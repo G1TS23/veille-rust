@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ term.name }} — {{ config.title }}{% endblock %}
+{% block content %}
+  <h2>Thème : {{ term.name }}</h2>
+  {% for page in term.pages %}
+    <div class="digest-link">
+      <a href="{{ page.permalink }}">{{ page.title }}</a>
+      <time datetime="{{ page.date }}">{{ page.date | date(format='%d/%m/%Y') }}</time>
+    </div>
+  {% endfor %}
+{% endblock %}

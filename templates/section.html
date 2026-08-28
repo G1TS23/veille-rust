@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ section.title }} — {{ config.title }}{% endblock %}
+{% block content %}
+  <h2>{{ section.title }}</h2>
+  {% for page in paginator.pages %}
+    <div class="digest-link">
+      <a href="{{ page.permalink }}">{{ page.title }}</a>
+      <time datetime="{{ page.date }}">{{ page.date | date(format='%d/%m/%Y') }}</time>
+    </div>
+  {% endfor %}
+  <div class="pager">
+    <span>{% if paginator.previous %}<a href="{{ paginator.previous }}">← Plus récent</a>{% endif %}</span>
+    <span>{% if paginator.next %}<a href="{{ paginator.next }}">Plus ancien →</a>{% endif %}</span>
+  </div>
+{% endblock %}

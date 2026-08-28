@@ -1,0 +1,20 @@
+# Configuration Zola (le site). À ne pas confondre avec sources.toml (la veille).
+base_url          = "https://olivierfalahi.github.io/veille-rust"
+title             = "Veille Rust"
+description       = "Veille quotidienne et automatisée sur l'écosystème Rust."
+default_language  = "fr"
+compile_sass      = false
+build_search_index = false
+
+# Génère notre propre flux : tu peux lire ta veille dans ton lecteur RSS.
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+taxonomies = [{ name = "tags", feed = true }]
+
+# Zola 0.22+ : sous-table dédiée, avec thèmes clair/sombre séparés
+# (utile pour les blocs de code dans notes/).
+[markdown.highlighting]
+style       = "class"
+light_theme = "github-light"
+dark_theme  = "github-dark"

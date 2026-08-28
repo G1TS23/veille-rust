@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
+{% block content %}
+  <article>
+    <h1 style="font-size:1.6rem;margin:0 0 .3rem">{{ page.title }}</h1>
+    <p style="color:var(--muted);font-size:.85rem;margin:0 0 2rem">
+      <time datetime="{{ page.date }}">{{ page.date | date(format='%d/%m/%Y') }}</time>
+    </p>
+    {{ page.content | safe }}
+    {% if page.taxonomies.tags %}
+    <ul class="tags">
+      {% for tag in page.taxonomies.tags %}
+        <li><a href="{{ get_taxonomy_url(kind='tags', term=tag) }}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </article>
+  <div class="pager">
+    <span>{% if page.earlier %}<a href="{{ page.earlier.permalink }}">← {{ page.earlier.title }}</a>{% endif %}</span>
+    <span>{% if page.later %}<a href="{{ page.later.permalink }}">{{ page.later.title }} →</a>{% endif %}</span>
+  </div>
+{% endblock %}

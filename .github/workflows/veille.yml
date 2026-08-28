@@ -1,0 +1,124 @@
+name: veille
+
+on:
+  schedule:
+    # 06:17 UTC. Jamais une heure ronde : les crons GitHub y sont saturés et
+    # partent avec 10-40 min de retard, voire sont abandonnés.
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Collecter sans rien écrire"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ['templates/**', 'config.toml']
+
+permissions:
+  contents: write   # commit de data/ et content/
+  pages: write      # déploiement
+  id-token: write   # OIDC exigé par deploy-pages
+
+# Deux runs concurrents se marcheraient dessus sur seen.jsonl.
+concurrency:
+  group: veille
+  cancel-in-progress: false
+
+env:
+  ZOLA_VERSION: "0.23.4"
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    env:
+      # Remonté ici (et pas dans le step) : le contexte `secrets` n'est pas
+      # disponible dans un `if:` de step, contrairement au contexte `env` du job.
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: collector
+
+      - name: Collecte
+        run: |
+          cargo run --release --manifest-path collector/Cargo.toml -- \
+            ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Commit
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name  "veille-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data content README.md
+          if git diff --staged --quiet; then
+            echo "Rien de neuf." >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "veille: $(date -u +%F)"
+            # Le cron peut avoir pris du retard : on rebase avant de pousser.
+            git pull --rebase --autostash origin main
+            git push
+          fi
+
+      - name: Installer Zola
+        run: |
+          curl -sSfL "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar xz -C /usr/local/bin zola
+          zola --version
+
+      - name: Build du site
+        run: zola build --output-dir public
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      # Notification Discord. Le step est sauté tant que le secret n'existe pas,
+      # ce qui permet de tourner sans configurer quoi que ce soit.
+      - name: Notifier Discord
+        if: ${{ !inputs.dry_run && env.DISCORD_WEBHOOK_URL != '' }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, urllib.request
+          p = pathlib.Path("data/latest.json")
+          if not p.exists(): raise SystemExit(0)
+          d = json.loads(p.read_text())
+          if not d["top"]: raise SystemExit(0)
+          lines = [f"🦀 **Veille Rust** — {d['count']} nouveauté(s)\n"]
+          lines += [f"• [{i['title']}]({i['url']}) — `{i['source_id']}`" for i in d["top"][:5]]
+          body = json.dumps({"content": "\n".join(lines)[:1900]}).encode()
+          req = urllib.request.Request(os.environ["DISCORD_WEBHOOK_URL"], data=body,
+                                       headers={"Content-Type": "application/json"})
+          urllib.request.urlopen(req).read()
+          PY
+
+      - name: Résumé du run
+        if: always()
+        run: |
+          python3 - >> "$GITHUB_STEP_SUMMARY" <<'PY'
+          import json, pathlib
+          print(f"### Veille")
+          p = pathlib.Path("data/latest.json")
+          if p.exists():
+              d = json.loads(p.read_text())
+              print(f"**{d['count']} item(s) collecte(s)**\n")
+              for i in d["top"]:
+                  print(f"- [{i['title']}]({i['url']}) · `{i['source_id']}` · score {i['score']}")
+          else:
+              print("_Aucun `data/latest.json` (dry-run ou run en echec)._")
+          PY
+
+  deploy:
+    needs: collect
+    if: ${{ !inputs.dry_run }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

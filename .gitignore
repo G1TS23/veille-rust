@@ -1,0 +1,15 @@
+# Build du collecteur
+collector/target/
+
+# Sortie Zola
+public/
+static/processed_images/
+
+# Écritures atomiques interrompues
+*.tmp
+
+.DS_Store
+
+# IDE
+.idea/
+.vscode/

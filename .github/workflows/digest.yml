@@ -1,0 +1,37 @@
+name: digest-hebdo
+
+on:
+  schedule:
+    - cron: '23 7 * * 1'   # lundi 07:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: collector
+
+      - name: Construire le récap
+        run: cargo run --release --manifest-path collector/Cargo.toml -- --weekly
+
+      - name: Ouvrir l'issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          week=$(date -u +%V)
+          year=$(date -u +%Y)
+          gh issue create \
+            --title "Veille Rust — S${week} ${year}" \
+            --body-file data/weekly.md \
+            --label veille 2>/dev/null \
+          || gh issue create \
+            --title "Veille Rust — S${week} ${year}" \
+            --body-file data/weekly.md

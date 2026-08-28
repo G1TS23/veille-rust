@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  {% set digests = get_section(path="digests/_index.md") %}
+  {% if digests.pages | length > 0 %}
+    {% set latest = digests.pages | first %}
+    <h2>Dernier digest — {{ latest.date | date(format='%d/%m/%Y') }}</h2>
+    {{ latest.content | safe }}
+
+    <h2>Précédents</h2>
+    {# Le filtre `slice` n'existe pas dans le Tera de Zola 0.23 : on saute
+       le premier (déjà affiché en entier) et on plafonne à 15. #}
+    {% for page in digests.pages %}
+      {% if not loop.first and loop.index0 <= 15 %}
+      <div class="digest-link">
+        <a href="{{ page.permalink }}">{{ page.title }}</a>
+        <time datetime="{{ page.date }}">{{ page.date | date(format='%d/%m/%Y') }}</time>
+      </div>
+      {% endif %}
+    {% endfor %}
+    <p style="margin-top:1.5rem"><a href="{{ get_url(path='digests/') }}">Toutes les archives →</a></p>
+  {% else %}
+    <p>Aucun digest pour l'instant. La première collecte n'a pas encore tourné.</p>
+  {% endif %}
+{% endblock %}
