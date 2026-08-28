@@ -44,9 +44,10 @@ Veille automatisée sur l'écosystème Rust : 14 sources agrégées chaque jour 
 ## Fonctionnement
 
 - `sources.toml` — la liste des sources et le scoring. **C'est le fichier à faire vivre.**
+- [`SETUP.md`](SETUP.md) — installation, ajout d'une source, réglage du bruit, pièges connus.
 - `collector/` — le collecteur (Rust) : fetch, dédup, scoring, rendu.
 - `data/seen.jsonl` — index de dédup. `data/items/` — archive brute par mois.
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 UTC · dernière trouvaille 2026-08-28 11:10 UTC
+Collecte quotidienne à 06:17 UTC · dernière trouvaille 2026-08-28 12:56 UTC

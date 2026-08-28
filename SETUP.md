@@ -99,6 +99,10 @@ Elle signale aussi trois pièges que l'œil ne voit pas :
 | `⚠ n/n déjà collectés ailleurs` | la source recoupe une source existante |
 | `⚠ Rien ne passerait le filtre` | le `weight` est trop bas pour ton `min_score` |
 
+> `--check-source` ne sonde que les flux RSS/Atom (`kind = "feed"`).
+> `hn_algolia` et `crates_io` n'ont pas d'URL à tester : ce sont des points
+> d'API fixes, déjà configurés.
+
 Puis le bloc dans `sources.toml` :
 
 ```toml
@@ -109,6 +113,46 @@ url    = "https://exemple.com/feed.xml"
 tags   = ["blog"]
 weight = 5             # score de base = weight × 10
 limit  = 10            # optionnel, plafonne les flux bavards
+```
+
+### Référence complète des champs
+
+| Champ | Requis | S'applique à | Rôle |
+|---|---|---|---|
+| `id` | ✅ | tous | identifiant court, affiché dans les digests |
+| `kind` | ✅ | tous | `feed` \| `hn_algolia` \| `crates_io` |
+| `url` | ✅ pour `feed` | `feed` | l'URL du flux RSS/Atom |
+| `query` | ✅ pour `hn_algolia` | `hn_algolia` | le terme cherché sur Hacker News |
+| `tags` | — | tous | thèmes ; le premier sert à grouper le digest |
+| `weight` | — | tous | **score de base = `weight` × 10** |
+| `limit` | — | tous | plafonne le nombre d'items retenus par run |
+| `min_points` | — | `hn_algolia` | seuil de points HN sous lequel on ignore |
+| `min_downloads` | — | `crates_io` | seuil de téléchargements sous lequel on ignore |
+
+> ⚠️ **Le piège du `weight` omis.** Il n'a pas de valeur par défaut utile : s'il
+> manque, il vaut `0`, donc le score de base vaut `0`, donc tout passe sous
+> `min_score` — **la source est collectée puis intégralement filtrée, sans le
+> moindre message d'erreur**. Une source qui « ne remonte jamais rien » vient
+> presque toujours de là. `--check-source` le détecte : `⚠ Rien ne passerait le
+> filtre`.
+
+Exemples pour les deux autres types :
+
+```toml
+[[source]]
+id         = "hn-async"
+kind       = "hn_algolia"
+query      = "rust async"
+tags       = ["communaute", "async"]
+weight     = 6
+min_points = 40          # ignore les stories sous 40 points
+
+[[source]]
+id            = "crates-new"
+kind          = "crates_io"
+tags          = ["crates"]
+weight        = 3
+min_downloads = 20000    # ignore les crates confidentiels
 ```
 
 ## Modifier le texte de l'issue hebdomadaire

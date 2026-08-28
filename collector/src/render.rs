@@ -107,6 +107,7 @@ pub fn readme(path: &Path, recent: &[Item], total_sources: usize) -> Result<()> 
     out.push_str(&format!(
         "\n---\n\n## Fonctionnement\n\n\
         - `sources.toml` — la liste des sources et le scoring. **C'est le fichier à faire vivre.**\n\
+        - [`SETUP.md`](SETUP.md) — installation, ajout d'une source, réglage du bruit, pièges connus.\n\
         - `collector/` — le collecteur (Rust) : fetch, dédup, scoring, rendu.\n\
         - `data/seen.jsonl` — index de dédup. `data/items/` — archive brute par mois.\n\
         - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.\n\
