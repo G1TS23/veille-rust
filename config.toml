@@ -1,5 +1,5 @@
 # Configuration Zola (le site). À ne pas confondre avec sources.toml (la veille).
-base_url          = "https://olivierfalahi.github.io/veille-rust"
+base_url          = "https://g1ts23.github.io/veille-rust"
 title             = "Veille Rust"
 description       = "Veille quotidienne et automatisée sur l'écosystème Rust."
 default_language  = "fr"

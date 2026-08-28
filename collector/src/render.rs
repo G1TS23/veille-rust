@@ -88,8 +88,8 @@ pub fn readme(path: &Path, recent: &[Item], total_sources: usize) -> Result<()> 
     out.push_str(&format!(
         "Veille automatisée sur l'écosystème Rust : {total_sources} sources agrégées chaque jour \
          par un collecteur écrit en Rust, tournant sur GitHub Actions.\n\n\
-         **[→ Consulter le site](https://olivierfalahi.github.io/veille-rust/)** · \
-         [flux RSS](https://olivierfalahi.github.io/veille-rust/atom.xml) · \
+         **[→ Consulter le site](https://g1ts23.github.io/veille-rust/)** · \
+         [flux RSS](https://g1ts23.github.io/veille-rust/atom.xml) · \
          [archives](content/digests/) · [mes notes](notes/)\n\n---\n\n"
     ));
     out.push_str(&format!("## Top de la semaine — {}\n\n", date_fr(today)));

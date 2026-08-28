@@ -3,7 +3,7 @@
 # Conseil : n'ajoute une source que si les précédentes te servent vraiment.
 # ─────────────────────────────────────────────────────────────────────────────
 
-user_agent = "veille-rust-bot/0.1 (+https://github.com/olivierfalahi/veille-rust)"
+user_agent = "veille-rust-bot/0.1 (+https://github.com/G1TS23/veille-rust)"
 
 # Un item doit atteindre ce score pour apparaître dans le digest.
 min_score = 30

@@ -2,7 +2,7 @@
 
 Veille automatisée sur l'écosystème Rust : 14 sources agrégées chaque jour par un collecteur écrit en Rust, tournant sur GitHub Actions.
 
-**[→ Consulter le site](https://olivierfalahi.github.io/veille-rust/)** · [flux RSS](https://olivierfalahi.github.io/veille-rust/atom.xml) · [archives](content/digests/) · [mes notes](notes/)
+**[→ Consulter le site](https://g1ts23.github.io/veille-rust/)** · [flux RSS](https://g1ts23.github.io/veille-rust/atom.xml) · [archives](content/digests/) · [mes notes](notes/)
 
 ---
 
@@ -49,4 +49,4 @@ Veille automatisée sur l'écosystème Rust : 14 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 UTC · dernière trouvaille 2026-08-28 10:08 UTC
+Collecte quotidienne à 06:17 UTC · dernière trouvaille 2026-08-28 10:59 UTC

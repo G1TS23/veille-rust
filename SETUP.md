@@ -7,10 +7,18 @@ cd "/Users/olivierfalahi/Documents/Perso/veille rust"
 gh repo create veille-rust --public --source=. --remote=origin --push
 ```
 
-Si tu choisis un autre nom, remplace `veille-rust` dans :
-- `config.toml` → `base_url`
-- `templates/base.html` → les liens GitHub
-- `collector/src/render.rs` → les URLs du README
+Le compte et le nom du repo sont codés en dur à quatre endroits. Si tu changes
+l'un des deux, mets-les à jour partout — sinon **toute la navigation du site
+casse silencieusement** (le build réussit, les liens renvoient 404) :
+
+| Fichier | Quoi |
+|---|---|
+| `config.toml` | `base_url` — hostname Pages, **en minuscules** |
+| `templates/base.html` | les deux liens vers le repo |
+| `collector/src/render.rs` | les URLs du README généré |
+| `sources.toml` | le `user_agent` (crates.io exige un contact valide) |
+
+Vérification rapide après coup : `curl -s <url-du-site> | grep -o 'href=\"[^\"]*github.io[^\"]*\"' | sort -u`
 
 ## 2. Activer GitHub Pages
 
