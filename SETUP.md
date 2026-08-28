@@ -138,6 +138,8 @@ rm -rf data/items content/digests/*.md
 | **Retard du cron** | `17 6 * * *` et pas `0 6 * * *` : les heures rondes sont saturées, les jobs partent en retard ou sont abandonnés. |
 | **Pas de chaînage** | Un push fait avec `GITHUB_TOKEN` ne déclenche aucun autre workflow. C'est pourquoi collecte, build et deploy sont dans le **même** workflow. |
 | **Reddit en CI** | Reddit renvoie souvent 403 aux IP de datacenter. Chaque source est isolée : un échec est loggé, le run continue. |
+| **Discord** | Cloudflare, devant Discord, renvoie **403 (code 1010)** sur le User-Agent par défaut de `urllib`. Le step envoie donc un UA explicite. Avec un vrai UA, un webhook invalide répond 404 `Unknown Webhook` — c'est ainsi qu'on distingue les deux causes. |
+| **Notification non bloquante** | Le step Discord est en `continue-on-error`. Sans ça son échec fait échouer `collect`, et `deploy` est sauté : le site ne serait pas publié à cause d'un message raté. |
 | **crates.io** | Exige un User-Agent identifiable (défini dans `sources.toml`) et fait évoluer son schéma JSON — `most_recently_updated` est devenu `just_updated`. |
 | **Deux runs le même jour** | Le digest du jour est reconstruit depuis l'archive, pas depuis les seules nouveautés du run. |
 | **Commits** | Un run qui ne trouve rien ne commite rien. `data/latest.json` et `data/weekly.md` sont des artefacts transitoires, volontairement gitignorés : suivis en git, leurs horodatages provoqueraient un commit quotidien vide. |

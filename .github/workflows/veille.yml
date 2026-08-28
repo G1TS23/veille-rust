@@ -79,8 +79,13 @@ jobs:
 
       # Notification Discord. Le step est sauté tant que le secret n'existe pas,
       # ce qui permet de tourner sans configurer quoi que ce soit.
+      #
+      # continue-on-error : une notification est accessoire. Sans ça, son échec
+      # fait échouer le job `collect`, et `deploy` (qui en dépend) est sauté —
+      # le site ne serait pas publié à cause d'un simple message raté.
       - name: Notifier Discord
         if: ${{ !inputs.dry_run && env.DISCORD_WEBHOOK_URL != '' }}
+        continue-on-error: true
         run: |
           python3 - <<'PY'
           import json, os, pathlib, urllib.request
@@ -91,9 +96,18 @@ jobs:
           lines = [f"🦀 **Veille Rust** — {d['count']} nouveauté(s)\n"]
           lines += [f"• [{i['title']}]({i['url']}) — `{i['source_id']}`" for i in d["top"][:5]]
           body = json.dumps({"content": "\n".join(lines)[:1900]}).encode()
-          req = urllib.request.Request(os.environ["DISCORD_WEBHOOK_URL"], data=body,
-                                       headers={"Content-Type": "application/json"})
-          urllib.request.urlopen(req).read()
+          # Le User-Agent explicite n'est pas cosmétique : Cloudflare, devant
+          # Discord, renvoie 403 (code 1010) sur le "Python-urllib/3.x" par
+          # défaut. Avec un UA identifiable, la requête atteint l'API.
+          req = urllib.request.Request(
+              os.environ["DISCORD_WEBHOOK_URL"], data=body,
+              headers={
+                  "Content-Type": "application/json",
+                  "User-Agent": "veille-rust-bot/0.1 (+https://github.com/G1TS23/veille-rust)",
+              },
+          )
+          with urllib.request.urlopen(req) as r:
+              print(f"Discord: HTTP {r.status} — {len(d['top'][:5])} item(s) postes")
           PY
 
       - name: Résumé du run
