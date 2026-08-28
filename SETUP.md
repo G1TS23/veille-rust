@@ -82,6 +82,31 @@ weight = 5             # score de base = weight × 10
 limit  = 10            # optionnel, plafonne les flux bavards
 ```
 
+## Modifier le texte de l'issue hebdomadaire
+
+Le corps de l'issue vit dans **`collector/templates/weekly.md`**. Il est lu à
+l'exécution : tu l'édites, tu relances, **sans recompiler**.
+
+```
+Valeurs   {{date}} {{count}} {{top_count}} {{rest_count}} {{items}} {{rest}}
+Blocs     [[#has_items]]…[[/has_items]]   affiché s'il y a des items
+          [[#empty]]…[[/empty]]           affiché si la semaine est vide
+          [[#has_rest]]…[[/has_rest]]     affiché s'il y a un reste replié
+Lignes    [[#item]] et [[#rest_item]] définissent le format d'UNE ligne,
+          avec {{title}} {{url}} {{source}} {{score}} {{tags}} {{summary}}
+Commentaires  les lignes commençant par {{! ne sont jamais rendues
+```
+
+Le **titre** de l'issue (`Veille Rust — S35 2026`) et son **label** restent dans
+`.github/workflows/digest.yml`, pas dans le template.
+
+Pour prévisualiser sans ouvrir d'issue :
+
+```bash
+cargo run --release --manifest-path collector/Cargo.toml -- --weekly
+cat data/weekly.md
+```
+
 ## Régler le bruit
 
 - **Trop d'items ?** monte `min_score` dans `sources.toml`, ou baisse le `weight` des sources bavardes.
@@ -107,3 +132,5 @@ rm -rf data/items content/digests/*.md
 | **Reddit en CI** | Reddit renvoie souvent 403 aux IP de datacenter. Chaque source est isolée : un échec est loggé, le run continue. |
 | **crates.io** | Exige un User-Agent identifiable (défini dans `sources.toml`) et fait évoluer son schéma JSON — `most_recently_updated` est devenu `just_updated`. |
 | **Deux runs le même jour** | Le digest du jour est reconstruit depuis l'archive, pas depuis les seules nouveautés du run. |
+| **Commits** | Un run qui ne trouve rien ne commite rien. `data/latest.json` et `data/weekly.md` sont des artefacts transitoires, volontairement gitignorés : suivis en git, leurs horodatages provoqueraient un commit quotidien vide. |
+| **« dernière trouvaille »** | La date affichée en pied de README est celle du dernier item trouvé, pas celle du dernier passage du cron. C'est ce qui rend les runs à vide sans effet. |

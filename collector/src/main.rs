@@ -24,7 +24,11 @@ async fn main() -> Result<()> {
     if args.iter().any(|a| a == "--weekly") {
         let store = store::Store::new(root.join("data"));
         let path = root.join("data").join("weekly.md");
-        render::weekly(&path, &store.recent(7)?)?;
+        render::weekly(
+            &path,
+            &root.join("collector").join("templates").join("weekly.md"),
+            &store.recent(7)?,
+        )?;
         println!("récap hebdo écrit : {}", path.display());
         return Ok(());
     }

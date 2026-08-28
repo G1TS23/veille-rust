@@ -1,6 +1,6 @@
 use crate::item::Item;
 use crate::store::write_atomic;
-use anyhow::Result;
+use anyhow::{Context, Result};
 use chrono::{Datelike, NaiveDate, Utc};
 use std::collections::BTreeSet;
 use std::path::Path;
@@ -103,6 +103,7 @@ pub fn readme(path: &Path, recent: &[Item], total_sources: usize) -> Result<()> 
         }
     }
 
+    let last_find = recent.iter().map(|i| i.first_seen).max();
     out.push_str(&format!(
         "\n---\n\n## Fonctionnement\n\n\
         - `sources.toml` — la liste des sources et le scoring. **C'est le fichier à faire vivre.**\n\
@@ -110,8 +111,13 @@ pub fn readme(path: &Path, recent: &[Item], total_sources: usize) -> Result<()> 
         - `data/seen.jsonl` — index de dédup. `data/items/` — archive brute par mois.\n\
         - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.\n\
         - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.\n\n\
-        Collecte quotidienne à 06:17 UTC · dernière mise à jour {}\n",
-        Utc::now().format("%Y-%m-%d %H:%M UTC")
+        Collecte quotidienne à 06:17 UTC · {}\n",
+        // Surtout pas `Utc::now()` : un horodatage de run rendrait le README
+        // différent à chaque passage, donc un commit par jour même sans contenu.
+        match last_find {
+            Some(t) => format!("dernière trouvaille {}", t.format("%Y-%m-%d %H:%M UTC")),
+            None => "rien de neuf sur les 7 derniers jours".to_string(),
+        }
     ));
 
     write_atomic(path, out.as_bytes())
@@ -132,38 +138,101 @@ pub fn latest_json(path: &Path, items: &[Item]) -> Result<()> {
     write_atomic(path, serde_json::to_string_pretty(&payload)?.as_bytes())
 }
 
-/// Corps de l'issue hebdomadaire.
-pub fn weekly(path: &Path, recent: &[Item]) -> Result<()> {
-    let today = Utc::now().date_naive();
-    let mut out = format!(
-        "Récap de la semaine écoulée, arrêté au {}.\n\n",
-        date_fr(today)
-    );
+/// Corps de l'issue hebdomadaire, rendu depuis `collector/templates/weekly.md`.
+///
+/// Le template est lu à l'exécution (et non `include_str!`) : tu peux retoucher
+/// le texte de l'issue sans recompiler le collecteur.
+pub fn weekly(path: &Path, tpl_path: &Path, recent: &[Item]) -> Result<()> {
+    const TOP: usize = 15;
 
-    if recent.is_empty() {
-        out.push_str("Rien de neuf cette semaine.\n");
-    } else {
-        out.push_str(&format!("**{} items** collectés. Top 15 :\n\n", recent.len()));
-        // Cases à cocher : l'issue devient une liste de lecture.
-        for it in recent.iter().take(15) {
-            out.push_str(&format!(
-                "- [ ] [{}]({}) — `{}` · score {}\n",
-                md(&it.title),
-                it.url,
-                it.source_id,
-                it.score
-            ));
-        }
-        out.push_str(&format!(
-            "\n<details><summary>Les {} autres</summary>\n\n",
-            recent.len().saturating_sub(15)
-        ));
-        for it in recent.iter().skip(15) {
-            out.push_str(&format!("- [{}]({}) — `{}`\n", md(&it.title), it.url, it.source_id));
-        }
-        out.push_str("\n</details>\n");
+    let raw = std::fs::read_to_string(tpl_path)
+        .with_context(|| format!("template introuvable : {}", tpl_path.display()))?;
+
+    // Les lignes de commentaire disparaissent avant tout le reste, sinon leurs
+    // exemples de placeholders seraient eux-mêmes substitués.
+    let mut tpl: String = raw
+        .lines()
+        .filter(|l| !l.trim_start().starts_with("{{!"))
+        .collect::<Vec<_>>()
+        .join("\n");
+
+    // Les régions `item` / `rest_item` ne sont pas du contenu : ce sont les
+    // formats d'une ligne. On les retire du corps avant de le rendre.
+    let item_tpl = take_region(&mut tpl, "item")
+        .unwrap_or_else(|| "- [ ] [{{title}}]({{url}}) — `{{source}}`".into());
+    let rest_tpl = take_region(&mut tpl, "rest_item").unwrap_or_else(|| item_tpl.clone());
+
+    let top: Vec<&Item> = recent.iter().take(TOP).collect();
+    let rest: Vec<&Item> = recent.iter().skip(TOP).collect();
+
+    keep_region(&mut tpl, "has_items", !recent.is_empty());
+    keep_region(&mut tpl, "empty", recent.is_empty());
+    keep_region(&mut tpl, "has_rest", !rest.is_empty());
+
+    let lines = |items: &[&Item], line: &str| {
+        items.iter().map(|it| fill_item(line, it)).collect::<Vec<_>>().join("\n")
+    };
+
+    let out = tpl
+        .replace("{{date}}", &date_fr(Utc::now().date_naive()))
+        .replace("{{count}}", &recent.len().to_string())
+        .replace("{{top_count}}", &top.len().to_string())
+        .replace("{{rest_count}}", &rest.len().to_string())
+        .replace("{{items}}", &lines(&top, &item_tpl))
+        .replace("{{rest}}", &lines(&rest, &rest_tpl));
+
+    write_atomic(path, squeeze(&out).as_bytes())
+}
+
+fn fill_item(line: &str, it: &Item) -> String {
+    line.replace("{{title}}", &md(&it.title))
+        .replace("{{url}}", &it.url)
+        .replace("{{source}}", &it.source_id)
+        .replace("{{score}}", &it.score.to_string())
+        .replace("{{tags}}", &it.tags.join(", "))
+        .replace("{{summary}}", &md(it.summary.as_deref().unwrap_or("")))
+}
+
+/// Retire `[[#nom]]…[[/nom]]` du template et renvoie son contenu.
+fn take_region(tpl: &mut String, name: &str) -> Option<String> {
+    let (start, end, inner) = locate_region(tpl, name)?;
+    tpl.replace_range(start..end, "");
+    Some(inner)
+}
+
+/// Garde le contenu de la région (marqueurs retirés) ou supprime le tout.
+fn keep_region(tpl: &mut String, name: &str, keep: bool) {
+    while let Some((start, end, inner)) = locate_region(tpl, name) {
+        tpl.replace_range(start..end, if keep { inner.trim_matches('\n') } else { "" });
     }
+}
 
-    out.push_str("\n---\n_Généré automatiquement. Ferme l'issue quand tu as fait le tri._\n");
-    write_atomic(path, out.as_bytes())
+/// Bornes de la région et contenu entre les marqueurs.
+fn locate_region(tpl: &str, name: &str) -> Option<(usize, usize, String)> {
+    let open = format!("[[#{name}]]");
+    let close = format!("[[/{name}]]");
+    let start = tpl.find(&open)?;
+    let inner_start = start + open.len();
+    let inner_end = tpl[inner_start..].find(&close)? + inner_start;
+    Some((start, inner_end + close.len(), tpl[inner_start..inner_end].to_string()))
+}
+
+/// Les régions supprimées laissent des trous : on ramène les lignes vides
+/// consécutives à une seule.
+fn squeeze(s: &str) -> String {
+    let mut out = String::with_capacity(s.len());
+    let mut blanks = 0;
+    for line in s.lines() {
+        if line.trim().is_empty() {
+            blanks += 1;
+            if blanks > 1 {
+                continue;
+            }
+        } else {
+            blanks = 0;
+        }
+        out.push_str(line);
+        out.push('\n');
+    }
+    format!("{}\n", out.trim_end())
 }

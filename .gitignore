@@ -5,6 +5,13 @@ collector/target/
 public/
 static/processed_images/
 
+# Payload transitoire entre les steps du workflow (notif + résumé).
+# Il porte un `generated_at` qui change à chaque run : le suivre en git
+# provoquerait un commit quotidien même quand rien n'a été collecté.
+data/latest.json
+# Corps de l'issue hebdo : régénéré à chaque run, jamais versionné.
+data/weekly.md
+
 # Écritures atomiques interrompues
 *.tmp
 
