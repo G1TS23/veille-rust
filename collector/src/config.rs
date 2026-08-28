@@ -75,6 +75,45 @@ impl Config {
         Ok(cfg)
     }
 
+    /// Avertit sur les sources dont le score de base ne franchit pas `min_score`.
+    ///
+    /// On compare le **score de base** (`weight` × 10) et non un plafond
+    /// théorique incluant tous les bonus : ce plafond dépasse presque toujours
+    /// `min_score`, ce qui ne signalerait jamais rien. Un item peut encore
+    /// passer en cumulant des bonus de mots-clés, d'où « ne remontera que ».
+    ///
+    /// Le cas courant est un `weight` oublié : serde lui donne `0`, et la
+    /// source affiche un `✓` vert avec 0 item sans qu'aucune erreur ne sorte.
+    pub fn warn_unreachable(&self) -> usize {
+        let mut n = 0;
+        for s in &self.source {
+            // HN ajoute points/10, sans plafond : impossible d'affirmer quoi
+            // que ce soit sur son score final.
+            if s.kind == Kind::HnAlgolia {
+                continue;
+            }
+            let base = s.weight * 10;
+            if base >= self.min_score {
+                continue;
+            }
+            n += 1;
+            if s.weight == 0 {
+                eprintln!(
+                    "  ⚠ `{}` : `weight` absent ou nul → score de base 0, sous min_score {}. \
+                     Cette source sera collectée puis entièrement filtrée.",
+                    s.id, self.min_score
+                );
+            } else {
+                eprintln!(
+                    "  ⚠ `{}` : score de base {base} < min_score {} — ne remontera que \
+                     les items cumulant des bonus de mots-clés.",
+                    s.id, self.min_score
+                );
+            }
+        }
+        n
+    }
+
     /// Bonus de score cumulé pour tous les motifs présents dans le texte.
     pub fn boost_for(&self, text: &str) -> i64 {
         let haystack = text.to_lowercase();

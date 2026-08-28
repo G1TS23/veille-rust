@@ -18,6 +18,8 @@ async fn main() -> Result<()> {
     // collector/ (dev local) : on remonte jusqu'à trouver sources.toml.
     let root = repo_root()?;
     let cfg = Config::load(root.join("sources.toml"))?;
+    // Silencieux quand tout va bien : n'écrit que s'il y a un vrai problème.
+    cfg.warn_unreachable();
     let args: Vec<String> = std::env::args().collect();
     let dry_run = args.iter().any(|a| a == "--dry-run");
 

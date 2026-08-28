@@ -131,10 +131,20 @@ limit  = 10            # optionnel, plafonne les flux bavards
 
 > ⚠️ **Le piège du `weight` omis.** Il n'a pas de valeur par défaut utile : s'il
 > manque, il vaut `0`, donc le score de base vaut `0`, donc tout passe sous
-> `min_score` — **la source est collectée puis intégralement filtrée, sans le
-> moindre message d'erreur**. Une source qui « ne remonte jamais rien » vient
-> presque toujours de là. `--check-source` le détecte : `⚠ Rien ne passerait le
-> filtre`.
+> `min_score` — la source est collectée puis intégralement filtrée. Une source
+> qui « ne remonte jamais rien » vient presque toujours de là.
+>
+> **Le collecteur le signale désormais au démarrage**, à chaque run :
+>
+> ```
+> ⚠ `ma-source` : `weight` absent ou nul → score de base 0, sous min_score 30.
+>   Cette source sera collectée puis entièrement filtrée.
+> ⚠ `autre` : score de base 10 < min_score 30 — ne remontera que les items
+>   cumulant des bonus de mots-clés.
+> ```
+>
+> L'avertissement est silencieux quand la configuration est saine. Il ignore
+> les sources `hn_algolia`, dont le bonus de points n'est pas plafonné.
 
 Exemples pour les deux autres types :
 
