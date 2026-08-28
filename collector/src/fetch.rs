@@ -8,6 +8,15 @@ pub struct Client {
     http: reqwest::Client,
 }
 
+pub struct Probe {
+    pub status: u16,
+    pub reason: String,
+    pub content_type: String,
+    /// Après redirections : révèle un flux qui a déménagé.
+    pub final_url: String,
+    pub bytes: usize,
+}
+
 impl Client {
     pub fn new(user_agent: &str) -> Result<Self> {
         let http = reqwest::Client::builder()
@@ -28,6 +37,28 @@ impl Client {
             items.truncate(limit);
         }
         Ok(items)
+    }
+
+    /// Faits HTTP bruts, pour le diagnostic `--check-source`. Séparé de
+    /// `collect()` afin de pouvoir rapporter le statut même quand le parsing
+    /// échoue ensuite.
+    pub async fn probe(&self, url: &str) -> Result<Probe> {
+        let resp = self.http.get(url).send().await?;
+        let status = resp.status();
+        let content_type = resp
+            .headers()
+            .get(reqwest::header::CONTENT_TYPE)
+            .and_then(|v| v.to_str().ok())
+            .unwrap_or("(absent)")
+            .to_string();
+        let final_url = resp.url().to_string();
+        Ok(Probe {
+            status: status.as_u16(),
+            reason: status.canonical_reason().unwrap_or("").to_string(),
+            content_type,
+            final_url,
+            bytes: resp.bytes().await?.len(),
+        })
     }
 
     async fn bytes(&self, url: &str) -> Result<Vec<u8>> {

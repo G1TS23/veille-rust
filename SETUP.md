@@ -78,7 +78,28 @@ zola serve
 
 ## Ajouter une source
 
-Un bloc dans `sources.toml`, puis `--dry-run` pour vérifier qu'elle répond :
+**Sonde-la d'abord.** La commande n'écrit rien et te dit tout ce qu'il faut
+savoir avant de toucher à `sources.toml` :
+
+```bash
+cargo run --release --manifest-path collector/Cargo.toml -- \
+  --check-source https://exemple.com/feed.xml [--weight 5]
+```
+
+Elle rapporte le code HTTP, les redirections (le flux a peut-être déménagé),
+si `feed-rs` avale le contenu, le nombre d'entrées, la fraîcheur de la plus
+récente, un échantillon avec les scores réels — et te sort le bloc `[[source]]`
+prêt à coller.
+
+Elle signale aussi trois pièges que l'œil ne voit pas :
+
+| Avertissement | Ce que ça veut dire |
+|---|---|
+| `⚠ Flux probablement abandonné` | rien publié depuis plus de 180 jours |
+| `⚠ n/n déjà collectés ailleurs` | la source recoupe une source existante |
+| `⚠ Rien ne passerait le filtre` | le `weight` est trop bas pour ton `min_score` |
+
+Puis le bloc dans `sources.toml` :
 
 ```toml
 [[source]]

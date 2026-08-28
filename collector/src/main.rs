@@ -1,3 +1,4 @@
+mod check;
 mod config;
 mod fetch;
 mod item;
@@ -19,6 +20,20 @@ async fn main() -> Result<()> {
     let cfg = Config::load(root.join("sources.toml"))?;
     let args: Vec<String> = std::env::args().collect();
     let dry_run = args.iter().any(|a| a == "--dry-run");
+
+    // Sonde d'un flux candidat : ne touche à rien, n'écrit rien.
+    if let Some(i) = args.iter().position(|a| a == "--check-source") {
+        let Some(url) = args.get(i + 1) else {
+            anyhow::bail!("usage : --check-source <url> [--weight N]");
+        };
+        let weight = args
+            .iter()
+            .position(|a| a == "--weight")
+            .and_then(|w| args.get(w + 1))
+            .and_then(|v| v.parse().ok())
+            .unwrap_or(5);
+        return check::check_source(&root, &cfg, url, weight).await;
+    }
 
     // Mode récap hebdo : on ne collecte rien, on relit l'archive.
     if args.iter().any(|a| a == "--weekly") {
