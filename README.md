@@ -1,6 +1,6 @@
 # 🦀 Veille Rust
 
-Veille automatisée sur l'écosystème Rust : 14 sources agrégées chaque jour par un collecteur écrit en Rust, tournant sur GitHub Actions.
+Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour par un collecteur écrit en Rust, tournant sur GitHub Actions.
 
 **[→ Consulter le site](https://g1ts23.github.io/veille-rust/)** · [flux RSS](https://g1ts23.github.io/veille-rust/atom.xml) · [archives](content/digests/) · [mes notes](notes/)
 
