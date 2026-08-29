@@ -190,18 +190,20 @@ cargo run --release --manifest-path collector/Cargo.toml -- --weekly
 cat data/weekly.md
 ```
 
-## Le cas particulier de Hacker News
+## Pourquoi il n'y a pas de source Hacker News
 
-`hn_algolia` interroge la recherche plein texte d'Algolia sur `query = "rust"`.
-Elle ne distingue pas le langage du mot courant, ni le titre du corps : des
-articles sans rapport remontent régulièrement.
+Une source `hn_algolia` a existé, puis a été retirée le 2026-08-29. Le type est
+toujours géré par le collecteur — tu peux le réactiver — mais voici le problème
+avant de le faire.
 
-**`min_points` ne corrige pas ça.** Le seuil mesure la popularité sur HN, pas la
-pertinence Rust — et les articles les plus votés sont justement les sujets
-généralistes. Sur les 6 premiers items collectés :
+Elle interroge la recherche plein texte d'Algolia sur `query = "rust"`, sans
+distinguer le langage du mot courant ni le titre du corps. Le résultat est
+irrémédiablement bruité, et **`min_points` ne le corrige pas** : le seuil mesure
+la popularité sur HN, pas la pertinence Rust — or les sujets généralistes sont
+les plus votés. Sur les 6 items collectés avant retrait :
 
 | Points | Sujet | Rust ? |
-|---|---|---|
+|---:|---|:---:|
 | 294 | Just the rumour of a bug is enough to find an exploit | ambigu |
 | 179 | Show HN: We built open OpenRouter… | ❌ |
 | 135 | Meta Paid $17B – Gets to Write Safety Rules… | ❌ |
@@ -209,12 +211,13 @@ généralistes. Sur les 6 premiers items collectés :
 | 70 | Some conservationists… Africa's wild dogs | ❌ |
 | 51 | Tell HN: Man, AI is killing my brain | ❌ |
 
-Monter le seuil à 80 écarte le **seul item clairement pertinent** et conserve
-les deux plus hors-sujet. La précision ne s'améliore pas, seul le volume baisse.
+Passer le seuil à 80 écartait le **seul item clairement pertinent** et gardait
+les deux plus hors-sujet : la précision restait à un tiers, seul le volume
+baissait. `restrictSearchableAttributes=title` n'aide pas non plus — on récolte
+encore des correspondances comme « ICANN de-accredits registrar T**rust**name ».
 
-Si le hors-sujet devient gênant, la vraie parade est de **retirer la source** :
 `lobsters` interroge le tag `rust`, donc précis par construction, et couvre en
-grande partie le même terrain.
+grande partie le même terrain communautaire.
 
 ## Régler le bruit
 
