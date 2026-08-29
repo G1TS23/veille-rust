@@ -2,9 +2,20 @@ name: veille
 
 on:
   schedule:
-    # 06:17 UTC. Jamais une heure ronde : les crons GitHub y sont saturés et
-    # partent avec 10-40 min de retard, voire sont abandonnés.
+    # Deux tentatives quotidiennes, volontairement redondantes : GitHub livre
+    # l'événement `schedule` « au mieux » et abandonne purement des exécutions
+    # en période de charge, sans trace ni file d'attente. Le 2026-08-29, la
+    # première occurrence de ce cron n'a jamais eu lieu.
+    #
+    # Les deux sont espacées de 2 h 26 pour tomber dans des fenêtres de charge
+    # distinctes — deux crons rapprochés seraient abandonnés ensemble.
+    #
+    # Un second passage est sans effet de bord : la dédup fait que rien n'est
+    # collecté deux fois, et un run sans nouveauté ne commite rien.
+    #
+    # Jamais une heure ronde : elles sont saturées.
     - cron: '17 6 * * *'
+    - cron: '43 8 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

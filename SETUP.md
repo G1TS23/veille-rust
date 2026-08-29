@@ -211,6 +211,7 @@ rm -rf data/items content/digests/*.md
 |---|---|
 | **Cron désactivé** | GitHub coupe les `schedule` après 60 jours sans activité sur le repo. Les commits du bot suffisent à le garder actif — sauf si la veille ne trouve jamais rien. |
 | **Retard du cron** | `17 6 * * *` et pas `0 6 * * *` : les heures rondes sont saturées, les jobs partent en retard ou sont abandonnés. |
+| **Cron abandonné** | GitHub livre `schedule` « au mieux » : une exécution peut ne jamais avoir lieu, sans trace ni file d'attente — c'est arrivé le 2026-08-29, à la première occurrence. D'où **deux crons quotidiens** (06:17 et 08:43 UTC), espacés pour tomber dans des fenêtres de charge distinctes. Un second passage ne coûte rien : la dédup empêche tout doublon et un run sans nouveauté ne commite pas. |
 | **Pas de chaînage** | Un push fait avec `GITHUB_TOKEN` ne déclenche aucun autre workflow. C'est pourquoi collecte, build et deploy sont dans le **même** workflow. |
 | **Reddit en CI** | Reddit renvoie souvent 403 aux IP de datacenter. Chaque source est isolée : un échec est loggé, le run continue. |
 | **Discord** | Cloudflare, devant Discord, renvoie **403 (code 1010)** sur le User-Agent par défaut de `urllib`. Le step envoie donc un UA explicite. Avec un vrai UA, un webhook invalide répond 404 `Unknown Webhook` — c'est ainsi qu'on distingue les deux causes. |

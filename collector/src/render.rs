@@ -112,7 +112,7 @@ pub fn readme(path: &Path, recent: &[Item], total_sources: usize) -> Result<()> 
         - `data/seen.jsonl` — index de dédup. `data/items/` — archive brute par mois.\n\
         - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.\n\
         - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.\n\n\
-        Collecte quotidienne à 06:17 UTC · {}\n",
+        Collecte quotidienne à 06:17 et 08:43 UTC · {}\n",
         // Surtout pas `Utc::now()` : un horodatage de run rendrait le README
         // différent à chaque passage, donc un commit par jour même sans contenu.
         match last_find {
