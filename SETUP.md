@@ -190,6 +190,32 @@ cargo run --release --manifest-path collector/Cargo.toml -- --weekly
 cat data/weekly.md
 ```
 
+## Le cas particulier de Hacker News
+
+`hn_algolia` interroge la recherche plein texte d'Algolia sur `query = "rust"`.
+Elle ne distingue pas le langage du mot courant, ni le titre du corps : des
+articles sans rapport remontent régulièrement.
+
+**`min_points` ne corrige pas ça.** Le seuil mesure la popularité sur HN, pas la
+pertinence Rust — et les articles les plus votés sont justement les sujets
+généralistes. Sur les 6 premiers items collectés :
+
+| Points | Sujet | Rust ? |
+|---|---|---|
+| 294 | Just the rumour of a bug is enough to find an exploit | ambigu |
+| 179 | Show HN: We built open OpenRouter… | ❌ |
+| 135 | Meta Paid $17B – Gets to Write Safety Rules… | ❌ |
+| 71 | **TurboKV: Insanely fast Rust key-value store** | ✅ |
+| 70 | Some conservationists… Africa's wild dogs | ❌ |
+| 51 | Tell HN: Man, AI is killing my brain | ❌ |
+
+Monter le seuil à 80 écarte le **seul item clairement pertinent** et conserve
+les deux plus hors-sujet. La précision ne s'améliore pas, seul le volume baisse.
+
+Si le hors-sujet devient gênant, la vraie parade est de **retirer la source** :
+`lobsters` interroge le tag `rust`, donc précis par construction, et couvre en
+grande partie le même terrain.
+
 ## Régler le bruit
 
 - **Trop d'items ?** monte `min_score` dans `sources.toml`, ou baisse le `weight` des sources bavardes.

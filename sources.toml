@@ -102,7 +102,7 @@ kind       = "hn_algolia"
 query      = "rust"
 tags       = ["communaute"]
 weight     = 6
-min_points = 40
+min_points = 80   # voir SETUP.md : ce seuil réduit le volume, pas le hors-sujet
 
 # ── Écosystème crates ────────────────────────────────────────────────────────
 
