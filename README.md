@@ -11,6 +11,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Enabling the next-generation trait solver on nightly](https://blog.rust-lang.org/2026/08/21/enabling-next-solver-on-nightly/)  
   <sub>`rust-blog` · officiel · score 110</sub>  
   After nearly 4 years of active development, the next-generation trait solver is close to stabilization. We are enabling it by default on nightly to surface any remaining issues and plan to stabilize it in the next months. This is the largest single change to the Rust compiler since its initial release. It completely…
+- [Announcing rustup 1.29.1](https://blog.rust-lang.org/2026/09/01/Rustup-1.29.1/)  
+  <sub>`rust-blog` · officiel · score 105</sub>  
+  The rustup team is happy to announce the release of rustup version 1.29.1. Rustup is the recommended tool to install Rust, a programming language that empowers everyone to build reliable and efficient software. What's new in rustup 1.29.1 The headlines of this release are: Concurrency in certain rustup operations has…
 - [Announcing Rust 1.97.1](https://blog.rust-lang.org/2026/07/16/Rust-1.97.1/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
   The Rust team has published a new point release of Rust, 1.97.1. Rust is a programming language that is empowering everyone to build reliable and efficient software. If you have a previous version of Rust installed via rustup, getting Rust 1.97.1 is as easy as: rustup update stable If you don't have it already, you…
@@ -35,9 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Supply chain attack on arrayref](https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   What happened On 2026-08-20 at 7:15 UTC we got a report that the proc-macro1 crate was malicious. The Rust Security Response Team verified this to be the case: the crate had a build script that was downloading a malicious payload. This crate proc-macro1 and others like it (proc-macro-en, aovine, arone, aronenao,…
-- [Announcing Rust 1.98.0](https://blog.rust-lang.org/2026/08/20/Rust-1.98.0/)  
-  <sub>`rust-blog` · officiel · score 100</sub>  
-  The Rust team is happy to announce a new version of Rust, 1.98.0. Rust is a programming language empowering everyone to build reliable and efficient software. If you have a previous version of Rust installed via rustup, you can get 1.98.0 with: $ rustup update stable If you don't have it already, you can get rustup…
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-01 11:42 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-01 13:40 UTC
