@@ -14,15 +14,15 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Announcing rustup 1.29.1](https://blog.rust-lang.org/2026/09/01/Rustup-1.29.1/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
   The rustup team is happy to announce the release of rustup version 1.29.1. Rustup is the recommended tool to install Rust, a programming language that empowers everyone to build reliable and efficient software. What's new in rustup 1.29.1 The headlines of this release are: Concurrency in certain rustup operations has…
+- [Rust debugging survey 2026 results](https://blog.rust-lang.org/2026/09/07/rust-debugging-survey-2026-results/)  
+  <sub>`rust-blog` · officiel · score 100</sub>  
+  One of the biggest challenges Rust developers report in our annual surveys is a subpar debugging experience. So, back in February, we ran our first Rust Debugging Survey, in the hopes of identifying how Rust developers are using debuggers and what problems they are facing when doing so. We received over 2,300…
 - [This Week in Rust 667](https://this-week-in-rust.org/blog/2026/09/02/this-week-in-rust-667/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
-- [RUSTSEC-2026-0269: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0269.html)  
-  <sub>`rustsec` · securite · score 94</sub>  
-  Filesystem sandbox escape when paths or symlinks contain trailing slashes
-- [RUSTSEC-2026-0268: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0268.html)  
-  <sub>`rustsec` · securite · score 94</sub>  
-  Guest controlled-size host heap allocation through WASIp3 streams
+- [RUSTSEC-2026-0279: Vulnerability in rojo](https://rustsec.org/advisories/RUSTSEC-2026-0279.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Rojo development server vulnerable to DNS rebinding, allowing unauthenticated read/write access and local program execution
 - [Rust 1.98.1](https://github.com/rust-lang/rust/releases/tag/1.98.1)  
   <sub>`rustc-releases` · release · score 90</sub>  
   rustc: fix miscompilation in generating vtables
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-07 12:39 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-07 14:26 UTC
