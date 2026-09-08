@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 7 septembre 2026
+## Top de la semaine — 8 septembre 2026
 
 - [Announcing Rust 1.98.1](https://blog.rust-lang.org/2026/09/03/Rust-1.98.1/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
@@ -20,6 +20,12 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [This Week in Rust 667](https://this-week-in-rust.org/blog/2026/09/02/this-week-in-rust-667/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
+- [RUSTSEC-2026-0280: greentic-setup-dev contained malicious code](https://rustsec.org/advisories/RUSTSEC-2026-0280.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  `greentic-setup-dev` 1.3.34027618345 was removed from crates.io due to containing malicious code
+- [RUSTSEC-2026-0281: greentic-setup contained malicious code](https://rustsec.org/advisories/RUSTSEC-2026-0281.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  `greentic-setup` 1.3.1-dev.34027618345 was removed from crates.io due to containing malicious code
 - [RUSTSEC-2026-0279: Vulnerability in rojo](https://rustsec.org/advisories/RUSTSEC-2026-0279.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Rojo development server vulnerable to DNS rebinding, allowing unauthenticated read/write access and local program execution
@@ -32,12 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0276: Vulnerability in apimock](https://rustsec.org/advisories/RUSTSEC-2026-0276.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Path traversal in apimock&apos;s file-serving fallback
-- [RUSTSEC-2026-0277: Vulnerability in apimock-server](https://rustsec.org/advisories/RUSTSEC-2026-0277.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Path traversal in apimock-server&apos;s file-serving fallback
-- [RUSTSEC-2026-0275: Vulnerability in azure_core](https://rustsec.org/advisories/RUSTSEC-2026-0275.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Legacy `azure_core` writes the `authorization` header value to logs
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-07 14:26 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-08 11:23 UTC
