@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 13 septembre 2026
+## Top de la semaine — 14 septembre 2026
 
 - [This Week in Rust 668](https://this-week-in-rust.org/blog/2026/09/09/this-week-in-rust-668/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
@@ -14,6 +14,12 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Rust debugging survey 2026 results](https://blog.rust-lang.org/2026/09/07/rust-debugging-survey-2026-results/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   One of the biggest challenges Rust developers report in our annual surveys is a subpar debugging experience. So, back in February, we ran our first Rust Debugging Survey, in the hopes of identifying how Rust developers are using debuggers and what problems they are facing when doing so. We received over 2,300…
+- [RUSTSEC-2026-0284: Unsoundness in lockfree](https://rustsec.org/advisories/RUSTSEC-2026-0284.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Double free in `Map::into_iter` and an uninitialized `Arc` in `SharedIncin::clear`
+- [RUSTSEC-2026-0283: clear_on_drop is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0283.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  clear_on_drop is unmaintained
 - [RUSTSEC-2026-0282: Vulnerability in aligned_box](https://rustsec.org/advisories/RUSTSEC-2026-0282.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Double free in `AlignedBox<\[T\]>::realloc_with_default` when an element&apos;s `Drop` panics
@@ -29,13 +35,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Welcome Dongpo and Ross to the Cargo team](https://blog.rust-lang.org/inside-rust/2026/09/08/welcome-dongpo-and-ross-to-the-cargo-team/)  
   <sub>`inside-rust` · officiel, compilo · score 80</sub>  
   We are excited to welcome Dongpo Liu and Ross Sullivan to the Cargo team! Dongpo has contributed to the Rust Project for years across different teams. He has been an important bridge between Cargo and other Rust teams and has brought insights and fresh ideas from across the Project. Dongpo also integrated cargo info…
-- [Optimizing a single Rust Clippy lint by 3133X](https://blog.goose.love/posts/making-a-clippy-lint-faster-by-3133x/)  
-  <sub>`lobsters` · communaute · score 60</sub>  
-  Comments
-- [Bastion of the Turbofish](https://github.com/rust-lang/rust/blob/main/tests/ui/parser/bastion-of-the-turbofish.rs)  
-  <sub>`lobsters` · communaute · score 60</sub>  
-  Comments
-- [Rust Is Tier-1 Language at Microsoft](https://rustfoundation.org/media/guest-post-rust-is-tier-1-language-at-microsoft/)  
+- [Stabilizing Rust's never type](https://lwn.net/SubscriberLink/1091015/d9e48318ed242b41/)  
   <sub>`lobsters` · communaute · score 60</sub>  
   Comments
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-13 11:57 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-14 12:54 UTC
