@@ -29,13 +29,13 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [What is Rust’s equivalent of compiling C++ with -O3?](https://www.reddit.com/r/rust/comments/1werfhi/what_is_rusts_equivalent_of_compiling_c_with_o3/)  
   <sub>`reddit` · communaute · score 61</sub>  
   Hello everyone, I’m building an Axum API and want to optimize the release binary for runtime performance. In C++, I would use flags such as -O3, and possibly -march=native. I know cargo build --release enables optimizations, but are there additional Cargo profile settings or rustc flags worth using? What settings do…
+- [Speeding up gearhash on ARM64 (2× faster)](https://sam.dev/blog/gearhash-on-arm64)  
+  <sub>`lobsters` · communaute · score 60</sub>  
+  Comments
 - [Stabilizing Rust's never type](https://lwn.net/SubscriberLink/1091015/d9e48318ed242b41/)  
   <sub>`lobsters` · communaute · score 60</sub>  
   Comments
 - [Optimizing a single Rust Clippy lint by 3133X](https://blog.goose.love/posts/making-a-clippy-lint-faster-by-3133x/)  
-  <sub>`lobsters` · communaute · score 60</sub>  
-  Comments
-- [Bastion of the Turbofish](https://github.com/rust-lang/rust/blob/main/tests/ui/parser/bastion-of-the-turbofish.rs)  
   <sub>`lobsters` · communaute · score 60</sub>  
   Comments
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-15 11:49 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-15 13:51 UTC
