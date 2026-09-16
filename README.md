@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 15 septembre 2026
+## Top de la semaine — 16 septembre 2026
 
 - [This Week in Rust 668](https://this-week-in-rust.org/blog/2026/09/09/this-week-in-rust-668/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
@@ -20,22 +20,22 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0283: clear_on_drop is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0283.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   clear_on_drop is unmaintained
-- [RUSTSEC-2026-0282: Vulnerability in aligned_box](https://rustsec.org/advisories/RUSTSEC-2026-0282.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Double free in `AlignedBox<\[T\]>::realloc_with_default` when an element&apos;s `Drop` panics
-- [Welcome Dongpo and Ross to the Cargo team](https://blog.rust-lang.org/inside-rust/2026/09/08/welcome-dongpo-and-ross-to-the-cargo-team/)  
-  <sub>`inside-rust` · officiel, compilo · score 80</sub>  
-  We are excited to welcome Dongpo Liu and Ross Sullivan to the Cargo team! Dongpo has contributed to the Rust Project for years across different teams. He has been an important bridge between Cargo and other Rust teams and has brought insights and fresh ideas from across the Project. Dongpo also integrated cargo info…
 - [What is Rust’s equivalent of compiling C++ with -O3?](https://www.reddit.com/r/rust/comments/1werfhi/what_is_rusts_equivalent_of_compiling_c_with_o3/)  
   <sub>`reddit` · communaute · score 61</sub>  
   Hello everyone, I’m building an Axum API and want to optimize the release binary for runtime performance. In C++, I would use flags such as -O3, and possibly -march=native. I know cargo build --release enables optimizations, but are there additional Cargo profile settings or rustc flags worth using? What settings do…
-- [Speeding up gearhash on ARM64 (2× faster)](https://sam.dev/blog/gearhash-on-arm64)  
+- [Some things Veloren does differently](https://blog.jsbarretto.com/post/veloren)  
   <sub>`lobsters` · communaute · score 60</sub>  
   Comments
-- [Stabilizing Rust's never type](https://lwn.net/SubscriberLink/1091015/d9e48318ed242b41/)  
+- [Ubuntu 26.10 completes transition to Rust-based coreutils](https://www.omgubuntu.co.uk/2026/09/ubuntu-2610-rust-coreutils-complete)  
   <sub>`lobsters` · communaute · score 60</sub>  
   Comments
-- [Optimizing a single Rust Clippy lint by 3133X](https://blog.goose.love/posts/making-a-clippy-lint-faster-by-3133x/)  
+- [Unsizing unsized values](https://hackmd.io/@WorldSEnder/Hkyqni6Ofl)  
+  <sub>`lobsters` · communaute · score 60</sub>  
+  Comments
+- [txcript: Switching coding agents mid-conversation](https://github.com/skillsynchq/txcript)  
+  <sub>`lobsters` · communaute · score 60</sub>  
+  Comments
+- [Trying to Make a Loop Auto-Vectorize](https://jsgroth.dev/blog/posts/trying-to-make-a-loop-auto-vectorize/)  
   <sub>`lobsters` · communaute · score 60</sub>  
   Comments
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-15 13:51 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-16 11:42 UTC
