@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 20 septembre 2026
+## Top de la semaine — 21 septembre 2026
 
 - [Be alert: targeted attacks on prominent Rustaceans](https://blog.rust-lang.org/2026/09/17/targeted-attacks/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
@@ -14,6 +14,21 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [This Week in Rust 669](https://this-week-in-rust.org/blog/2026/09/16/this-week-in-rust-669/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
+- [RUSTSEC-2026-0293: Vulnerability in ringbuf](https://rustsec.org/advisories/RUSTSEC-2026-0293.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Double free / use-after-free in `Consumer::skip` and `Consumer::clear` when an element&apos;s `Drop` panics
+- [RUSTSEC-2026-0291: Vulnerability in owned-alloc](https://rustsec.org/advisories/RUSTSEC-2026-0291.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Double free in `OwnedAlloc::drop_in_place` when the contained value&apos;s `Drop` panics
+- [RUSTSEC-2026-0292: Vulnerability in imbl-sized-chunks](https://rustsec.org/advisories/RUSTSEC-2026-0292.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Double free / use-after-free in `Chunk` and `InlineArray` removal methods when an element&apos;s `Drop` panics
+- [RUSTSEC-2026-0294: Unsoundness in iceoryx2-bb-container](https://rustsec.org/advisories/RUSTSEC-2026-0294.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Unsoundness in UTF-8 &apos;String&apos; trait
+- [RUSTSEC-2026-0295: Vulnerability in z3](https://rustsec.org/advisories/RUSTSEC-2026-0295.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Memory corruption bug on `ApplyResult` type
 - [RUSTSEC-2026-0288: Vulnerability in cosmian_kyber](https://rustsec.org/advisories/RUSTSEC-2026-0288.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   cosmian_kyber: AVX2 backend skips Fujisaki-Okamoto implicit rejection, enabling chosen-ciphertext key recovery
@@ -23,21 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0290: Vulnerability in pqc_kyber](https://rustsec.org/advisories/RUSTSEC-2026-0290.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   pqc_kyber: AVX2 backend skips Fujisaki-Okamoto implicit rejection, enabling chosen-ciphertext key recovery
-- [RUSTSEC-2026-0289: pqc_kyber is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0289.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  pqc_kyber is unmaintained
-- [RUSTSEC-2026-0286: Vulnerability in cryptoki](https://rustsec.org/advisories/RUSTSEC-2026-0286.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Out-of-bounds read when decoding CKA_ALLOWED_MECHANISMS
-- [RUSTSEC-2026-0285: Vulnerability in rustls](https://rustsec.org/advisories/RUSTSEC-2026-0285.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  TLS 1.3 handshake messages incorrectly accepted across encryption level boundaries
-- [RUSTSEC-2026-0284: Unsoundness in lockfree](https://rustsec.org/advisories/RUSTSEC-2026-0284.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Double free in `Map::into_iter` and an uninitialized `Arc` in `SharedIncin::clear`
-- [RUSTSEC-2026-0283: clear_on_drop is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0283.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  clear_on_drop is unmaintained
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-20 11:29 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-21 12:54 UTC
