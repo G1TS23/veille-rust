@@ -6,8 +6,11 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 22 septembre 2026
+## Top de la semaine — 23 septembre 2026
 
+- [Announcing a Maintainer in Residence: Scott Schafer for the Cargo team](https://blog.rust-lang.org/2026/09/22/announcing-a-maintainer-in-residence-scott-schafer-for-the-cargo-team/)  
+  <sub>`rust-blog` · officiel · score 100</sub>  
+  At the end of August, we announced our first Maintainers in Residence, Rust Project contributors who are funded for their upstream contributions and maintenance work from the Rust Foundation Maintainers Fund (RFMF). Since then, the Rust Leadership Council has dedicated more funds from its Project Priorities budget to…
 - [GitHub Actions leaking secrets when Miri output is cached](https://blog.rust-lang.org/2026/09/21/github-actions-leaking-secrets-when-miri-output-is-cached/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   The Rust Security Response Team was notified that Miri stores all environment variables to target/, allowing secrets to persist in caches. While not necessary a vulnerability in and of itself, when paired with GitHub Actions caching behavior, it is possible for this to expose secrets to PRs. Overview GitHub Actions…
@@ -17,27 +20,24 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [This Week in Rust 669](https://this-week-in-rust.org/blog/2026/09/16/this-week-in-rust-669/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
+- [RUSTSEC-2026-0304: Vulnerability in connectrpc](https://rustsec.org/advisories/RUSTSEC-2026-0304.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Finished streaming calls keep reading a stalled request body indefinitely
+- [RUSTSEC-2026-0305: Vulnerability in librsvg](https://rustsec.org/advisories/RUSTSEC-2026-0305.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Use-after-free when XML includes have duplicated entities
+- [RUSTSEC-2026-0303: stack-graphs is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0303.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  `stack-graphs` is archived and unmaintained
+- [RUSTSEC-2026-0302: Unsoundness in stack-graphs](https://rustsec.org/advisories/RUSTSEC-2026-0302.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  `stack-graphs` C API exports are safe `extern "C"` functions
+- [RUSTSEC-2026-0301: Vulnerability in stack_collections](https://rustsec.org/advisories/RUSTSEC-2026-0301.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Double free in `StackVec::retain` when a predicate or element `Drop` panics
 - [RUSTSEC-2026-0298: Vulnerability in unicycle](https://rustsec.org/advisories/RUSTSEC-2026-0298.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Use-after-free when a future&apos;s `Drop` panics while the container is dropped
-- [RUSTSEC-2026-0299: owned-alloc is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0299.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  `owned-alloc` is unmaintained
-- [RUSTSEC-2026-0300: Vulnerability in skiplist](https://rustsec.org/advisories/RUSTSEC-2026-0300.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Use-after-free in `clear` and `retain` when an element&apos;s `Drop` panics
-- [RUSTSEC-2026-0296: unzip is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0296.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  `unzip` is unmaintained
-- [RUSTSEC-2026-0297: Vulnerability in unzip](https://rustsec.org/advisories/RUSTSEC-2026-0297.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  `unzip`: archive extraction is vulnerable to path traversal (zip-slip)
-- [RUSTSEC-2026-0293: Vulnerability in ringbuf](https://rustsec.org/advisories/RUSTSEC-2026-0293.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Double free / use-after-free in `Consumer::skip` and `Consumer::clear` when an element&apos;s `Drop` panics
-- [RUSTSEC-2026-0291: Vulnerability in owned-alloc](https://rustsec.org/advisories/RUSTSEC-2026-0291.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Double free in `OwnedAlloc::drop_in_place` when the contained value&apos;s `Drop` panics
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-22 13:39 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-23 11:43 UTC
