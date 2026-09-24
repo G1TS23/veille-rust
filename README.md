@@ -6,8 +6,11 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 23 septembre 2026
+## Top de la semaine — 24 septembre 2026
 
+- [This Week in Rust 670](https://this-week-in-rust.org/blog/2026/09/23/this-week-in-rust-670/)  
+  <sub>`twir` · newsletter, must-read · score 100</sub>  
+  Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
 - [Announcing a Maintainer in Residence: Scott Schafer for the Cargo team](https://blog.rust-lang.org/2026/09/22/announcing-a-maintainer-in-residence-scott-schafer-for-the-cargo-team/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   At the end of August, we announced our first Maintainers in Residence, Rust Project contributors who are funded for their upstream contributions and maintenance work from the Rust Foundation Maintainers Fund (RFMF). Since then, the Rust Leadership Council has dedicated more funds from its Project Priorities budget to…
@@ -17,9 +20,12 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Be alert: targeted attacks on prominent Rustaceans](https://blog.rust-lang.org/2026/09/17/targeted-attacks/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   We believe that there is an ongoing campaign targeting rust-lang members and owners of popular crates that is attempting to compromise devices and accounts in order to use them to publish malware. What we've seen A video call is set up for something positive — maybe for a job, maybe for a project, maybe for a contract…
-- [This Week in Rust 669](https://this-week-in-rust.org/blog/2026/09/16/this-week-in-rust-669/)  
-  <sub>`twir` · newsletter, must-read · score 100</sub>  
-  Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
+- [RUSTSEC-2026-0307: Vulnerability in uncbv](https://rustsec.org/advisories/RUSTSEC-2026-0307.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  `uncbv`: archive extraction is vulnerable to path traversal (zip-slip)
+- [RUSTSEC-2026-0306: Unsoundness in faster-hex](https://rustsec.org/advisories/RUSTSEC-2026-0306.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  `hex_decode_unchecked` AVX2 path reads past `src`
 - [RUSTSEC-2026-0304: Vulnerability in connectrpc](https://rustsec.org/advisories/RUSTSEC-2026-0304.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Finished streaming calls keep reading a stalled request body indefinitely
@@ -32,12 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0302: Unsoundness in stack-graphs](https://rustsec.org/advisories/RUSTSEC-2026-0302.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   `stack-graphs` C API exports are safe `extern "C"` functions
-- [RUSTSEC-2026-0301: Vulnerability in stack_collections](https://rustsec.org/advisories/RUSTSEC-2026-0301.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Double free in `StackVec::retain` when a predicate or element `Drop` panics
-- [RUSTSEC-2026-0298: Vulnerability in unicycle](https://rustsec.org/advisories/RUSTSEC-2026-0298.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Use-after-free when a future&apos;s `Drop` panics while the container is dropped
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-23 13:50 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-24 11:51 UTC
