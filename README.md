@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 24 septembre 2026
+## Top de la semaine — 25 septembre 2026
 
 - [This Week in Rust 670](https://this-week-in-rust.org/blog/2026/09/23/this-week-in-rust-670/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
@@ -17,9 +17,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [GitHub Actions leaking secrets when Miri output is cached](https://blog.rust-lang.org/2026/09/21/github-actions-leaking-secrets-when-miri-output-is-cached/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   The Rust Security Response Team was notified that Miri stores all environment variables to target/, allowing secrets to persist in caches. While not necessary a vulnerability in and of itself, when paired with GitHub Actions caching behavior, it is possible for this to expose secrets to PRs. Overview GitHub Actions…
-- [Be alert: targeted attacks on prominent Rustaceans](https://blog.rust-lang.org/2026/09/17/targeted-attacks/)  
-  <sub>`rust-blog` · officiel · score 100</sub>  
-  We believe that there is an ongoing campaign targeting rust-lang members and owners of popular crates that is attempting to compromise devices and accounts in order to use them to publish malware. What we've seen A video call is set up for something positive — maybe for a job, maybe for a project, maybe for a contract…
+- [RUSTSEC-2026-0308: Unsoundness in salsa](https://rustsec.org/advisories/RUSTSEC-2026-0308.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Use-after-free in interned values and cached function results
 - [RUSTSEC-2026-0307: Vulnerability in uncbv](https://rustsec.org/advisories/RUSTSEC-2026-0307.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   `uncbv`: archive extraction is vulnerable to path traversal (zip-slip)
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-24 13:46 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-25 11:55 UTC
