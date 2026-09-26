@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 25 septembre 2026
+## Top de la semaine — 26 septembre 2026
 
 - [This Week in Rust 670](https://this-week-in-rust.org/blog/2026/09/23/this-week-in-rust-670/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
@@ -17,6 +17,12 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [GitHub Actions leaking secrets when Miri output is cached](https://blog.rust-lang.org/2026/09/21/github-actions-leaking-secrets-when-miri-output-is-cached/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   The Rust Security Response Team was notified that Miri stores all environment variables to target/, allowing secrets to persist in caches. While not necessary a vulnerability in and of itself, when paired with GitHub Actions caching behavior, it is possible for this to expose secrets to PRs. Overview GitHub Actions…
+- [RUSTSEC-2026-0309: Unsoundness in bun_collections](https://rustsec.org/advisories/RUSTSEC-2026-0309.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  `SinglyLinkedList::remove` dereferences a null link
+- [RUSTSEC-2026-0310: Vulnerability in domain](https://rustsec.org/advisories/RUSTSEC-2026-0310.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Various panics, soundness and resource exhaustion issues
 - [RUSTSEC-2026-0308: Unsoundness in salsa](https://rustsec.org/advisories/RUSTSEC-2026-0308.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Use-after-free in interned values and cached function results
@@ -32,12 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0305: Vulnerability in librsvg](https://rustsec.org/advisories/RUSTSEC-2026-0305.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Use-after-free when XML includes have duplicated entities
-- [RUSTSEC-2026-0303: stack-graphs is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0303.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  `stack-graphs` is archived and unmaintained
-- [RUSTSEC-2026-0302: Unsoundness in stack-graphs](https://rustsec.org/advisories/RUSTSEC-2026-0302.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  `stack-graphs` C API exports are safe `extern "C"` functions
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-25 14:09 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-26 11:29 UTC
