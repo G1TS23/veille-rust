@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 27 septembre 2026
+## Top de la semaine — 28 septembre 2026
 
 - [This Week in Rust 670](https://this-week-in-rust.org/blog/2026/09/23/this-week-in-rust-670/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
@@ -17,6 +17,12 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [GitHub Actions leaking secrets when Miri output is cached](https://blog.rust-lang.org/2026/09/21/github-actions-leaking-secrets-when-miri-output-is-cached/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   The Rust Security Response Team was notified that Miri stores all environment variables to target/, allowing secrets to persist in caches. While not necessary a vulnerability in and of itself, when paired with GitHub Actions caching behavior, it is possible for this to expose secrets to PRs. Overview GitHub Actions…
+- [RUSTSEC-2026-0312: Vulnerability in x509-validator](https://rustsec.org/advisories/RUSTSEC-2026-0312.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Excluded iPAddress name constraints with an all-zero mask are not applied
+- [RUSTSEC-2026-0311: Vulnerability in latex-rust](https://rustsec.org/advisories/RUSTSEC-2026-0311.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Stack overflow on deeply nested LaTeX input
 - [RUSTSEC-2026-0309: Unsoundness in bun_collections](https://rustsec.org/advisories/RUSTSEC-2026-0309.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   `SinglyLinkedList::remove` dereferences a null link
@@ -32,12 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0306: Unsoundness in faster-hex](https://rustsec.org/advisories/RUSTSEC-2026-0306.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   `hex_decode_unchecked` AVX2 path reads past `src`
-- [RUSTSEC-2026-0304: Vulnerability in connectrpc](https://rustsec.org/advisories/RUSTSEC-2026-0304.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Finished streaming calls keep reading a stalled request body indefinitely
-- [RUSTSEC-2026-0305: Vulnerability in librsvg](https://rustsec.org/advisories/RUSTSEC-2026-0305.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Use-after-free when XML includes have duplicated entities
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-27 12:07 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-28 14:02 UTC
