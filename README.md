@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 28 septembre 2026
+## Top de la semaine — 29 septembre 2026
 
 - [This Week in Rust 670](https://this-week-in-rust.org/blog/2026/09/23/this-week-in-rust-670/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
@@ -14,9 +14,18 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Announcing a Maintainer in Residence: Scott Schafer for the Cargo team](https://blog.rust-lang.org/2026/09/22/announcing-a-maintainer-in-residence-scott-schafer-for-the-cargo-team/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   At the end of August, we announced our first Maintainers in Residence, Rust Project contributors who are funded for their upstream contributions and maintenance work from the Rust Foundation Maintainers Fund (RFMF). Since then, the Rust Leadership Council has dedicated more funds from its Project Priorities budget to…
-- [GitHub Actions leaking secrets when Miri output is cached](https://blog.rust-lang.org/2026/09/21/github-actions-leaking-secrets-when-miri-output-is-cached/)  
-  <sub>`rust-blog` · officiel · score 100</sub>  
-  The Rust Security Response Team was notified that Miri stores all environment variables to target/, allowing secrets to persist in caches. While not necessary a vulnerability in and of itself, when paired with GitHub Actions caching behavior, it is possible for this to expose secrets to PRs. Overview GitHub Actions…
+- [RUSTSEC-2026-0313: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0313.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Outgoing HTTP body write allows guest-driven host memory exhaustion
+- [RUSTSEC-2026-0314: Vulnerability in wasmtime-wasi](https://rustsec.org/advisories/RUSTSEC-2026-0314.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Guest can panic host through filesystem datetime overflow
+- [RUSTSEC-2026-0316: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0316.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Dynamic record lifting can allocate beyond the hostcall fuel limit
+- [RUSTSEC-2026-0315: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0315.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  `call_ref` and exception `catch` can drop some fuel accounting, leading to exponential fuel amplification
 - [RUSTSEC-2026-0312: Vulnerability in x509-validator](https://rustsec.org/advisories/RUSTSEC-2026-0312.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Excluded iPAddress name constraints with an all-zero mask are not applied
@@ -29,15 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0310: Vulnerability in domain](https://rustsec.org/advisories/RUSTSEC-2026-0310.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Various panics, soundness and resource exhaustion issues
-- [RUSTSEC-2026-0308: Unsoundness in salsa](https://rustsec.org/advisories/RUSTSEC-2026-0308.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Use-after-free in interned values and cached function results
-- [RUSTSEC-2026-0307: Vulnerability in uncbv](https://rustsec.org/advisories/RUSTSEC-2026-0307.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  `uncbv`: archive extraction is vulnerable to path traversal (zip-slip)
-- [RUSTSEC-2026-0306: Unsoundness in faster-hex](https://rustsec.org/advisories/RUSTSEC-2026-0306.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  `hex_decode_unchecked` AVX2 path reads past `src`
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-28 16:59 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-29 12:58 UTC
