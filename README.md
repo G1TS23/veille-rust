@@ -6,11 +6,17 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 30 septembre 2026
+## Top de la semaine — 1 octobre 2026
 
-- [This Week in Rust 670](https://this-week-in-rust.org/blog/2026/09/23/this-week-in-rust-670/)  
+- [This Week in Rust 671](https://this-week-in-rust.org/blog/2026/09/30/this-week-in-rust-671/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
+- [Announcing Rust 1.99.0](https://blog.rust-lang.org/2026/10/01/Rust-1.99.0/)  
+  <sub>`rust-blog` · officiel · score 100</sub>  
+  The Rust team is happy to announce a new version of Rust, 1.99.0. Rust is a programming language empowering everyone to build reliable and efficient software. If you have a previous version of Rust installed via rustup, you can get 1.99.0 with: $ rustup update stable If you don't have it already, you can get rustup…
+- [Rust 1.99.0](https://github.com/rust-lang/rust/releases/tag/1.99.0)  
+  <sub>`rustc-releases` · release · score 96</sub>  
+  Language Add allow-by-default raw_borrows_via_references lint that checks for references that decay immediately into raw borrows Extend unconditional_panic lint to function calls that panic when the chunks/windows size is zero Stabilize C-variadic function definitions Stabilize the ability to use #\[unsafe(naked)\]…
 - [RUSTSEC-2026-0313: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0313.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Outgoing HTTP body write allows guest-driven host memory exhaustion
@@ -23,21 +29,15 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0315: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0315.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   `call_ref` and exception `catch` can drop some fuel accounting, leading to exponential fuel amplification
+- [RUSTSEC-2026-0317: Vulnerability in sheets-diff](https://rustsec.org/advisories/RUSTSEC-2026-0317.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  A 512-byte workbook can provoke a multi-gigabyte allocation and abort the process
 - [RUSTSEC-2026-0312: Vulnerability in x509-validator](https://rustsec.org/advisories/RUSTSEC-2026-0312.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Excluded iPAddress name constraints with an all-zero mask are not applied
 - [RUSTSEC-2026-0311: Vulnerability in latex-rust](https://rustsec.org/advisories/RUSTSEC-2026-0311.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Stack overflow on deeply nested LaTeX input
-- [RUSTSEC-2026-0309: Unsoundness in bun_collections](https://rustsec.org/advisories/RUSTSEC-2026-0309.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  `SinglyLinkedList::remove` dereferences a null link
-- [RUSTSEC-2026-0310: Vulnerability in domain](https://rustsec.org/advisories/RUSTSEC-2026-0310.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Various panics, soundness and resource exhaustion issues
-- [RUSTSEC-2026-0308: Unsoundness in salsa](https://rustsec.org/advisories/RUSTSEC-2026-0308.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Use-after-free in interned values and cached function results
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-09-30 15:15 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-01 13:24 UTC
