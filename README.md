@@ -6,8 +6,11 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 1 octobre 2026
+## Top de la semaine — 2 octobre 2026
 
+- [Demoting i686 Windows targets to std-only](https://blog.rust-lang.org/2026/10/02/demoting-i686-windows-targets-to-std-only/)  
+  <sub>`rust-blog` · officiel · score 100</sub>  
+  With Rust 1.100.0, the following changes to 32-bit Windows targets will happen: i686-pc-windows-msvc Tier 1 with host tools target will be demoted to Tier 1 without host tools. i686-pc-windows-gnu Tier 2 with host tools target will be demoted to Tier 2 without host tools. Builds of the standard library will continue…
 - [This Week in Rust 671](https://this-week-in-rust.org/blog/2026/09/30/this-week-in-rust-671/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
@@ -29,15 +32,12 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0315: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0315.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   `call_ref` and exception `catch` can drop some fuel accounting, leading to exponential fuel amplification
-- [RUSTSEC-2026-0317: Vulnerability in sheets-diff](https://rustsec.org/advisories/RUSTSEC-2026-0317.html)  
+- [RUSTSEC-2026-0319: anymap2 is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0319.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  A 512-byte workbook can provoke a multi-gigabyte allocation and abort the process
-- [RUSTSEC-2026-0312: Vulnerability in x509-validator](https://rustsec.org/advisories/RUSTSEC-2026-0312.html)  
+  anymap2 is unmaintained
+- [RUSTSEC-2026-0318: Vulnerability in matrix-sdk-crypto](https://rustsec.org/advisories/RUSTSEC-2026-0318.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Excluded iPAddress name constraints with an all-zero mask are not applied
-- [RUSTSEC-2026-0311: Vulnerability in latex-rust](https://rustsec.org/advisories/RUSTSEC-2026-0311.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Stack overflow on deeply nested LaTeX input
+  Sending custom to-device messages may panics
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-01 15:38 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-02 12:41 UTC
