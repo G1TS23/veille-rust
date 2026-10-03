@@ -6,8 +6,11 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 2 octobre 2026
+## Top de la semaine — 3 octobre 2026
 
+- [RUSTSEC-2026-0327: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0327.html)  
+  <sub>`rustsec` · securite · score 102</sub>  
+  Wasmtime component async-lifted callback result count is unvalidated, causing a native stack buffer overflow
 - [Demoting i686 Windows targets to std-only](https://blog.rust-lang.org/2026/10/02/demoting-i686-windows-targets-to-std-only/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   With Rust 1.100.0, the following changes to 32-bit Windows targets will happen: i686-pc-windows-msvc Tier 1 with host tools target will be demoted to Tier 1 without host tools. i686-pc-windows-gnu Tier 2 with host tools target will be demoted to Tier 2 without host tools. Builds of the standard library will continue…
@@ -20,24 +23,21 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Rust 1.99.0](https://github.com/rust-lang/rust/releases/tag/1.99.0)  
   <sub>`rustc-releases` · release · score 96</sub>  
   Language Add allow-by-default raw_borrows_via_references lint that checks for references that decay immediately into raw borrows Extend unconditional_panic lint to function calls that panic when the chunks/windows size is zero Stabilize C-variadic function definitions Stabilize the ability to use #\[unsafe(naked)\]…
-- [RUSTSEC-2026-0313: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0313.html)  
+- [RUSTSEC-2026-0320: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0320.html)  
   <sub>`rustsec` · securite · score 94</sub>  
-  Outgoing HTTP body write allows guest-driven host memory exhaustion
-- [RUSTSEC-2026-0314: Vulnerability in wasmtime-wasi](https://rustsec.org/advisories/RUSTSEC-2026-0314.html)  
+  Wasmtime wasi:http implementation panics with a zero timeout supplied
+- [RUSTSEC-2026-0323: Vulnerability in wasmtime-wasi](https://rustsec.org/advisories/RUSTSEC-2026-0323.html)  
   <sub>`rustsec` · securite · score 94</sub>  
-  Guest can panic host through filesystem datetime overflow
-- [RUSTSEC-2026-0316: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0316.html)  
+  fd_readdir copies uninitialized struct padding into guest memory
+- [RUSTSEC-2026-0322: Vulnerability in wasmtime-wasi](https://rustsec.org/advisories/RUSTSEC-2026-0322.html)  
   <sub>`rustsec` · securite · score 94</sub>  
-  Dynamic record lifting can allocate beyond the hostcall fuel limit
-- [RUSTSEC-2026-0315: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0315.html)  
+  Excessive allocated memory on the host when guests don&apos;t have stdio
+- [RUSTSEC-2026-0324: Vulnerability in wasmtime-wasi](https://rustsec.org/advisories/RUSTSEC-2026-0324.html)  
   <sub>`rustsec` · securite · score 94</sub>  
-  `call_ref` and exception `catch` can drop some fuel accounting, leading to exponential fuel amplification
-- [RUSTSEC-2026-0319: anymap2 is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0319.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  anymap2 is unmaintained
-- [RUSTSEC-2026-0318: Vulnerability in matrix-sdk-crypto](https://rustsec.org/advisories/RUSTSEC-2026-0318.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Sending custom to-device messages may panics
+  Guest can panic host through filesystem timestamp before the epoch on wasip3
+- [RUSTSEC-2026-0321: Vulnerability in wasmtime-wasi](https://rustsec.org/advisories/RUSTSEC-2026-0321.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  WASI preview 0 implementation of `poll_oneoff` circumvents fuel consumption
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-02 14:57 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-03 11:43 UTC
