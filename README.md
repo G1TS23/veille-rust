@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 5 octobre 2026
+## Top de la semaine — 6 octobre 2026
 
 - [RUSTSEC-2026-0327: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0327.html)  
   <sub>`rustsec` · securite · score 102</sub>  
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-05 17:23 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-06 13:22 UTC
