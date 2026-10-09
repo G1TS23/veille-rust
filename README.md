@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 8 octobre 2026
+## Top de la semaine — 9 octobre 2026
 
 - [RUSTSEC-2026-0327: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0327.html)  
   <sub>`rustsec` · securite · score 102</sub>  
@@ -14,9 +14,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [This Week in Rust 672](https://this-week-in-rust.org/blog/2026/10/07/this-week-in-rust-672/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
-- [Demoting i686 Windows targets to std-only](https://blog.rust-lang.org/2026/10/02/demoting-i686-windows-targets-to-std-only/)  
-  <sub>`rust-blog` · officiel · score 100</sub>  
-  With Rust 1.100.0, the following changes to 32-bit Windows targets will happen: i686-pc-windows-msvc Tier 1 with host tools target will be demoted to Tier 1 without host tools. i686-pc-windows-gnu Tier 2 with host tools target will be demoted to Tier 2 without host tools. Builds of the standard library will continue…
 - [RUSTSEC-2026-0320: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0320.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Wasmtime wasi:http implementation panics with a zero timeout supplied
@@ -38,6 +35,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0325: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0325.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Mis-typed WebAssembly tag imports can lead to GC heap corruption
+- [RUSTSEC-2026-0334: Vulnerability in bip322](https://rustsec.org/advisories/RUSTSEC-2026-0334.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  BIP-322 address ownership verification bypass for P2WPKH and P2SH-P2WPKH addresses
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-08 15:50 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-09 13:23 UTC
