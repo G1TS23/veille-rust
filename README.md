@@ -14,30 +14,30 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2024-0449: unsafe-libyaml is unmaintained](https://rustsec.org/advisories/RUSTSEC-2024-0449.html)  
   <sub>`rustsec` · securite · score 96</sub>  
   unsafe-libyaml is unmaintained
-- [RUSTSEC-2026-0335: Vulnerability in mykey](https://rustsec.org/advisories/RUSTSEC-2026-0335.html)  
+- [RUSTSEC-2021-0157: Vulnerability in ammonia](https://rustsec.org/advisories/RUSTSEC-2021-0157.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Pre-shared key mode transmits the TGK in cleartext, exposing the SRTP master key
-- [RUSTSEC-2026-0336: Vulnerability in mykey](https://rustsec.org/advisories/RUSTSEC-2026-0336.html)  
+  Incorrect escaping for `url("")` functions in CSS style attributes
+- [RUSTSEC-2026-0337: Vulnerability in ic-cipher](https://rustsec.org/advisories/RUSTSEC-2026-0337.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  MIKEY message MAC is never verified on receive, so forged messages are accepted
-- [RUSTSEC-2026-0334: Vulnerability in bip322](https://rustsec.org/advisories/RUSTSEC-2026-0334.html)  
+  Poly1305 panics or computes a wrong tag on attacker-chosen messages of 64 bytes or more
+- [RUSTSEC-2026-0341: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0341.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  BIP-322 address ownership verification bypass for P2WPKH and P2SH-P2WPKH addresses
-- [RUSTSEC-2026-0333: Vulnerability in noyalib](https://rustsec.org/advisories/RUSTSEC-2026-0333.html)  
+  Stream reassembly memory-exhaustion guard in quinn-proto can be bypassed
+- [RUSTSEC-2026-0343: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0343.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Resource budgets not enforced on the typed deserialization path
-- [RUSTSEC-2026-0332: Unsoundness in wasapi](https://rustsec.org/advisories/RUSTSEC-2026-0332.html)  
+  Outgoing datagram buffer accounting can panic the sender in quinn-proto
+- [RUSTSEC-2026-0339: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0339.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  `WaveFormat::parse` reads past the end of a `&WAVEFORMATEX`
-- [RUSTSEC-2026-0329: Vulnerability in libcrux-hmac-drbg](https://rustsec.org/advisories/RUSTSEC-2026-0329.html)  
+  Unbounded growth of pending connection ID retirements in quinn-proto
+- [RUSTSEC-2026-0342: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0342.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Auto-Reseeding HMAC-DRBG could panic for some output lengths
-- [RUSTSEC-2026-0330: Vulnerability in libcrux-kem](https://rustsec.org/advisories/RUSTSEC-2026-0330.html)  
+  Zero-length DATAGRAM frames bypass the receive buffer limit in quinn-proto
+- [RUSTSEC-2026-0340: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0340.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Hybrid Encapsulation from Seed Panics on Short Seed
-- [RUSTSEC-2026-0331: Vulnerability in libcrux-kem](https://rustsec.org/advisories/RUSTSEC-2026-0331.html)  
+  Peer minimum ACK delay can panic quinn-proto when ACK_FREQUENCY transmission is enabled
+- [RUSTSEC-2026-0338: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0338.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Panic on Decoding Short Hybrid Keys
+  Remote peer can panic quinn-proto with zero-length STREAM frames during unordered reads
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-12 15:33 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-12 18:11 UTC
