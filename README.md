@@ -6,11 +6,20 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 11 octobre 2026
+## Top de la semaine — 12 octobre 2026
 
 - [This Week in Rust 672](https://this-week-in-rust.org/blog/2026/10/07/this-week-in-rust-672/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
+- [RUSTSEC-2024-0449: unsafe-libyaml is unmaintained](https://rustsec.org/advisories/RUSTSEC-2024-0449.html)  
+  <sub>`rustsec` · securite · score 96</sub>  
+  unsafe-libyaml is unmaintained
+- [RUSTSEC-2026-0335: Vulnerability in mykey](https://rustsec.org/advisories/RUSTSEC-2026-0335.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Pre-shared key mode transmits the TGK in cleartext, exposing the SRTP master key
+- [RUSTSEC-2026-0336: Vulnerability in mykey](https://rustsec.org/advisories/RUSTSEC-2026-0336.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  MIKEY message MAC is never verified on receive, so forged messages are accepted
 - [RUSTSEC-2026-0334: Vulnerability in bip322](https://rustsec.org/advisories/RUSTSEC-2026-0334.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   BIP-322 address ownership verification bypass for P2WPKH and P2SH-P2WPKH addresses
@@ -29,15 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0331: Vulnerability in libcrux-kem](https://rustsec.org/advisories/RUSTSEC-2026-0331.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Panic on Decoding Short Hybrid Keys
-- [Async Rust: Where does the scheduler live?](https://herecomesthemoon.net/2026/10/async-rust-where-does-the-scheduler-live/)  
-  <sub>`lobsters` · communaute · score 68</sub>  
-  Comments
-- [The Performance Cost of RwLock in Our Read-Heavy Workload](https://pranitha.dev/posts/rwlock-vs-lockfree/)  
-  <sub>`lobsters` · communaute · score 66</sub>  
-  Comments
-- [Mold 3.0.0 Released](https://github.com/rui314/mold/releases/tag/v3.0.0)  
-  <sub>`lobsters` · communaute · score 65</sub>  
-  Comments
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-11 12:56 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-12 15:33 UTC
