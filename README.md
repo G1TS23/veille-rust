@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 12 octobre 2026
+## Top de la semaine — 13 octobre 2026
 
 - [This Week in Rust 672](https://this-week-in-rust.org/blog/2026/10/07/this-week-in-rust-672/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
@@ -14,6 +14,15 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2024-0449: unsafe-libyaml is unmaintained](https://rustsec.org/advisories/RUSTSEC-2024-0449.html)  
   <sub>`rustsec` · securite · score 96</sub>  
   unsafe-libyaml is unmaintained
+- [RUSTSEC-2021-0158: Vulnerability in ammonia](https://rustsec.org/advisories/RUSTSEC-2021-0158.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  XSS in ammonia via SVG `animateMotion`, `animateTransform`, and/or `animateColor` tags
+- [RUSTSEC-2026-0345: Vulnerability in kuva](https://rustsec.org/advisories/RUSTSEC-2026-0345.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Untrusted labels can inject SVG attributes, CSS values, and terminal escape sequences
+- [RUSTSEC-2026-0344: Vulnerability in ruzstd](https://rustsec.org/advisories/RUSTSEC-2026-0344.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Decompression bomb in `ruzstd`: a tiny input can exhaust memory (OOM)
 - [RUSTSEC-2021-0157: Vulnerability in ammonia](https://rustsec.org/advisories/RUSTSEC-2021-0157.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Incorrect escaping for `url("")` functions in CSS style attributes
@@ -29,15 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0339: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0339.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Unbounded growth of pending connection ID retirements in quinn-proto
-- [RUSTSEC-2026-0342: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0342.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Zero-length DATAGRAM frames bypass the receive buffer limit in quinn-proto
-- [RUSTSEC-2026-0340: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0340.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Peer minimum ACK delay can panic quinn-proto when ACK_FREQUENCY transmission is enabled
-- [RUSTSEC-2026-0338: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0338.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Remote peer can panic quinn-proto with zero-length STREAM frames during unordered reads
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-12 18:11 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-13 14:17 UTC
