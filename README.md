@@ -17,9 +17,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0354: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0354.html)  
   <sub>`rustsec` · securite · score 102</sub>  
   Host panic when component `call_async` is cancelled under some conditions
-- [This Week in Rust 672](https://this-week-in-rust.org/blog/2026/10/07/this-week-in-rust-672/)  
-  <sub>`twir` · newsletter, must-read · score 100</sub>  
-  Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
 - [RUSTSEC-2024-0449: unsafe-libyaml is unmaintained](https://rustsec.org/advisories/RUSTSEC-2024-0449.html)  
   <sub>`rustsec` · securite · score 96</sub>  
   unsafe-libyaml is unmaintained
@@ -38,6 +35,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0361: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0361.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Panic when pending calls are run after a trap
+- [RUSTSEC-2026-0364: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0364.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Exception tags can cause host data structures to be unaligned
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-15 11:35 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-15 13:40 UTC
