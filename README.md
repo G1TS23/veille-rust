@@ -6,38 +6,38 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 14 octobre 2026
+## Top de la semaine — 15 octobre 2026
 
+- [RUSTSEC-2026-0362: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0362.html)  
+  <sub>`rustsec` · securite · score 102</sub>  
+  Wasmtime may not properly enforce async-entrypoint requirement
+- [RUSTSEC-2026-0353: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0353.html)  
+  <sub>`rustsec` · securite · score 102</sub>  
+  Panic when invoking an async-lifted function via `call`
+- [RUSTSEC-2026-0354: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0354.html)  
+  <sub>`rustsec` · securite · score 102</sub>  
+  Host panic when component `call_async` is cancelled under some conditions
 - [This Week in Rust 672](https://this-week-in-rust.org/blog/2026/10/07/this-week-in-rust-672/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
 - [RUSTSEC-2024-0449: unsafe-libyaml is unmaintained](https://rustsec.org/advisories/RUSTSEC-2024-0449.html)  
   <sub>`rustsec` · securite · score 96</sub>  
   unsafe-libyaml is unmaintained
-- [RUSTSEC-2026-0347: Vulnerability in rustls](https://rustsec.org/advisories/RUSTSEC-2026-0347.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Buffered application data sent to outer server after ECH rejection
-- [RUSTSEC-2026-0348: Vulnerability in rustls](https://rustsec.org/advisories/RUSTSEC-2026-0348.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Brotli certificate decompression can allocate up to 1 GiB before authentication
-- [RUSTSEC-2026-0349: Vulnerability in rustls](https://rustsec.org/advisories/RUSTSEC-2026-0349.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Unauthenticated ServerHello can downgrade later connections to classical key exchange
-- [RUSTSEC-2026-0346: Vulnerability in rustls](https://rustsec.org/advisories/RUSTSEC-2026-0346.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  `Debug` impls for client session values expose TLS secrets
-- [RUSTSEC-2021-0158: Vulnerability in ammonia](https://rustsec.org/advisories/RUSTSEC-2021-0158.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  XSS in ammonia via SVG `animateMotion`, `animateTransform`, and/or `animateColor` tags
-- [RUSTSEC-2026-0345: Vulnerability in kuva](https://rustsec.org/advisories/RUSTSEC-2026-0345.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Untrusted labels can inject SVG attributes, CSS values, and terminal escape sequences
-- [RUSTSEC-2026-0344: Vulnerability in ruzstd](https://rustsec.org/advisories/RUSTSEC-2026-0344.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Decompression bomb in `ruzstd`: a tiny input can exhaust memory (OOM)
-- [RUSTSEC-2021-0157: Vulnerability in ammonia](https://rustsec.org/advisories/RUSTSEC-2021-0157.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Incorrect escaping for `url("")` functions in CSS style attributes
+- [RUSTSEC-2026-0351: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0351.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  `wasi-http`: Request with long url before query parameter crashes host
+- [RUSTSEC-2026-0350: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0350.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Guests can send absolute-form HTTP requests to different hosts
+- [RUSTSEC-2026-0352: Vulnerability in wasmtime-wasi](https://rustsec.org/advisories/RUSTSEC-2026-0352.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Filesystem sandbox escape when renaming symlinks with trailing slashes
+- [RUSTSEC-2026-0358: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0358.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Yielding in a component start function can lead to a host panic
+- [RUSTSEC-2026-0361: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0361.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Panic when pending calls are run after a trap
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-14 14:00 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-15 11:35 UTC
