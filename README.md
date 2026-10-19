@@ -23,9 +23,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [This Week in Rust 673](https://this-week-in-rust.org/blog/2026/10/14/this-week-in-rust-673/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
-- [RUSTSEC-2024-0449: unsafe-libyaml is unmaintained](https://rustsec.org/advisories/RUSTSEC-2024-0449.html)  
-  <sub>`rustsec` · securite · score 96</sub>  
-  unsafe-libyaml is unmaintained
 - [Rust 1.99.1](https://github.com/rust-lang/rust/releases/tag/1.99.1)  
   <sub>`rustc-releases` · release · score 94</sub>  
   library: fix missing symbol wcslen on UEFI and embedded targets rustc: fix miscompilation of FFI bool return values on x86_64 rust-lld: add the rpath for libLLVM on macOS
@@ -38,6 +35,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0352: Vulnerability in wasmtime-wasi](https://rustsec.org/advisories/RUSTSEC-2026-0352.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Filesystem sandbox escape when renaming symlinks with trailing slashes
+- [RUSTSEC-2026-0358: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0358.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Yielding in a component start function can lead to a host panic
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-19 13:24 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-19 15:51 UTC
