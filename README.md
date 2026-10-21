@@ -8,6 +8,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ## Top de la semaine — 21 octobre 2026
 
+- [Announcing rustup 1.29.2](https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/)  
+  <sub>`rust-blog` · officiel · score 105</sub>  
+  The rustup team is happy to announce the release of rustup version 1.29.2. Rustup is the recommended tool to install Rust, a programming language that empowers everyone to build reliable and efficient software. What's new in rustup 1.29.2 This is a small release which only updates the rustls-webpki and…
 - [Announcing Rust 1.99.1](https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
   The Rust team has published a new point release of Rust, 1.99.1. Rust is a programming language that is empowering everyone to build reliable and efficient software. If you have a previous version of Rust installed via rustup, getting Rust 1.99.1 is as easy as: rustup update stable If you don't have it already, you…
@@ -35,9 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0376: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0376.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   `wasi-http`: Guests can add conflicting content lengths to messages
-- [RUSTSEC-2026-0379: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0379.html)  
-  <sub>`rustsec` · securite · score 94</sub>  
-  Cranelift backend on aarch64 can jump to incorrect target on large Wasm `br_table` instruction
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-21 11:55 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-21 14:05 UTC
