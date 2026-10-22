@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 21 octobre 2026
+## Top de la semaine — 22 octobre 2026
 
 - [Announcing rustup 1.29.2](https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
@@ -14,15 +14,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Announcing Rust 1.99.1](https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
   The Rust team has published a new point release of Rust, 1.99.1. Rust is a programming language that is empowering everyone to build reliable and efficient software. If you have a previous version of Rust installed via rustup, getting Rust 1.99.1 is as easy as: rustup update stable If you don't have it already, you…
-- [RUSTSEC-2026-0362: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0362.html)  
-  <sub>`rustsec` · securite · score 102</sub>  
-  Wasmtime may not properly enforce async-entrypoint requirement
-- [RUSTSEC-2026-0353: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0353.html)  
-  <sub>`rustsec` · securite · score 102</sub>  
-  Panic when invoking an async-lifted function via `call`
-- [RUSTSEC-2026-0354: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0354.html)  
-  <sub>`rustsec` · securite · score 102</sub>  
-  Host panic when component `call_async` is cancelled under some conditions
+- [This Week in Rust 674](https://this-week-in-rust.org/blog/2026/10/21/this-week-in-rust-674/)  
+  <sub>`twir` · newsletter, must-read · score 100</sub>  
+  Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
 - [This Week in Rust 673](https://this-week-in-rust.org/blog/2026/10/14/this-week-in-rust-673/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
@@ -38,6 +32,12 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0376: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0376.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   `wasi-http`: Guests can add conflicting content lengths to messages
+- [RUSTSEC-2026-0379: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0379.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Cranelift backend on aarch64 can jump to incorrect target on large Wasm `br_table` instruction
+- [RUSTSEC-2026-0378: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0378.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Panic lowering a host-created component model stream into a guest that expects a different payload type
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-21 14:05 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-22 11:58 UTC
