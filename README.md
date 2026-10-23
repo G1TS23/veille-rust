@@ -6,18 +6,12 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 22 octobre 2026
+## Top de la semaine — 23 octobre 2026
 
 - [Announcing rustup 1.29.2](https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
   The rustup team is happy to announce the release of rustup version 1.29.2. Rustup is the recommended tool to install Rust, a programming language that empowers everyone to build reliable and efficient software. What's new in rustup 1.29.2 This is a small release which only updates the rustls-webpki and…
-- [Announcing Rust 1.99.1](https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/)  
-  <sub>`rust-blog` · officiel · score 105</sub>  
-  The Rust team has published a new point release of Rust, 1.99.1. Rust is a programming language that is empowering everyone to build reliable and efficient software. If you have a previous version of Rust installed via rustup, getting Rust 1.99.1 is as easy as: rustup update stable If you don't have it already, you…
 - [This Week in Rust 674](https://this-week-in-rust.org/blog/2026/10/21/this-week-in-rust-674/)  
-  <sub>`twir` · newsletter, must-read · score 100</sub>  
-  Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
-- [This Week in Rust 673](https://this-week-in-rust.org/blog/2026/10/14/this-week-in-rust-673/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
 - [RUSTSEC-2026-0380: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0380.html)  
@@ -38,6 +32,12 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0378: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0378.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Panic lowering a host-created component model stream into a guest that expects a different payload type
+- [RUSTSEC-2026-0385: Vulnerability in ctutils](https://rustsec.org/advisories/RUSTSEC-2026-0385.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Non-constant-time mask generation and `u128` comparisons
+- [RUSTSEC-2026-0384: Vulnerability in tokio](https://rustsec.org/advisories/RUSTSEC-2026-0384.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Race condition in `tokio::time::Interval` on Tokio v1.54.0
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-22 14:04 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-23 11:44 UTC
