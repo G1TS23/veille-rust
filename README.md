@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 23 octobre 2026
+## Top de la semaine — 24 octobre 2026
 
 - [Announcing rustup 1.29.2](https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
@@ -17,6 +17,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0380: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0380.html)  
   <sub>`rustsec` · securite · score 99</sub>  
   Bit-packing in Cranelift compiler causes silent overflow and miscompilation
+- [RUSTSEC-2026-0386: Unsoundness in tokio](https://rustsec.org/advisories/RUSTSEC-2026-0386.html)  
+  <sub>`rustsec` · securite · score 98</sub>  
+  `AsyncFd::new` and related constructors violate I/O safety
 - [RUSTSEC-2026-0377: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0377.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   `wasi-http` p3: forwarded trailers aren&apos;t checked against `is_forbidden_header` hook
@@ -32,12 +35,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0378: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0378.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Panic lowering a host-created component model stream into a guest that expects a different payload type
-- [RUSTSEC-2026-0385: Vulnerability in ctutils](https://rustsec.org/advisories/RUSTSEC-2026-0385.html)  
+- [RUSTSEC-2026-0387: Vulnerability in crypto-bigint](https://rustsec.org/advisories/RUSTSEC-2026-0387.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Non-constant-time mask generation and `u128` comparisons
-- [RUSTSEC-2026-0384: Vulnerability in tokio](https://rustsec.org/advisories/RUSTSEC-2026-0384.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Race condition in `tokio::time::Interval` on Tokio v1.54.0
+  Multiple timing variability issues in operations intended to be constant-time
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-23 13:47 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-24 11:07 UTC
