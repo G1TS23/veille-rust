@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 24 octobre 2026
+## Top de la semaine — 25 octobre 2026
 
 - [Announcing rustup 1.29.2](https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
@@ -35,9 +35,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0378: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0378.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Panic lowering a host-created component model stream into a guest that expects a different payload type
-- [RUSTSEC-2026-0387: Vulnerability in crypto-bigint](https://rustsec.org/advisories/RUSTSEC-2026-0387.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Multiple timing variability issues in operations intended to be constant-time
+- [Rust 1.95.0](https://github.com/rust-lang/rust/releases/tag/1.95.0)  
+  <sub>`rustc-releases` · release · score 90</sub>  
+  Language Stabilize if let guards on match arms irrefutable_let_patterns lint no longer lints on let chains Support importing path-segment keywords with renaming Stabilize inline assembly for PowerPC and PowerPC64 const-eval: be more consistent in the behavior of padding during typed copies Const blocks are no longer…
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-24 12:54 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-25 11:37 UTC
