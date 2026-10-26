@@ -6,11 +6,14 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 25 octobre 2026
+## Top de la semaine — 26 octobre 2026
 
 - [Announcing rustup 1.29.2](https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
   The rustup team is happy to announce the release of rustup version 1.29.2. Rustup is the recommended tool to install Rust, a programming language that empowers everyone to build reliable and efficient software. What's new in rustup 1.29.2 This is a small release which only updates the rustls-webpki and…
+- [How to fund Rust contributors](https://blog.rust-lang.org/2026/10/26/how-to-fund-rust-contributors/)  
+  <sub>`rust-blog` · officiel · score 100</sub>  
+  TLDR: To fund general maintenance, donate to the Rust Foundation Maintainers Fund or sponsor the RustNL Maintainers Team To fund specific features and improvements, sponsor fundable Rust Project Goals To fund individual contributors, donate to their GitHub Sponsors accounts There is always so much to do in the Rust…
 - [This Week in Rust 674](https://this-week-in-rust.org/blog/2026/10/21/this-week-in-rust-674/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
@@ -35,9 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0378: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0378.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Panic lowering a host-created component model stream into a guest that expects a different payload type
-- [Rust 1.95.0](https://github.com/rust-lang/rust/releases/tag/1.95.0)  
-  <sub>`rustc-releases` · release · score 90</sub>  
-  Language Stabilize if let guards on match arms irrefutable_let_patterns lint no longer lints on let chains Support importing path-segment keywords with renaming Stabilize inline assembly for PowerPC and PowerPC64 const-eval: be more consistent in the behavior of padding during typed copies Const blocks are no longer…
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-25 13:20 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-26 13:10 UTC
