@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 26 octobre 2026
+## Top de la semaine — 27 octobre 2026
 
 - [Announcing rustup 1.29.2](https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
@@ -17,27 +17,27 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [This Week in Rust 674](https://this-week-in-rust.org/blog/2026/10/21/this-week-in-rust-674/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
-- [RUSTSEC-2026-0380: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0380.html)  
-  <sub>`rustsec` · securite · score 99</sub>  
-  Bit-packing in Cranelift compiler causes silent overflow and miscompilation
 - [RUSTSEC-2026-0386: Unsoundness in tokio](https://rustsec.org/advisories/RUSTSEC-2026-0386.html)  
   <sub>`rustsec` · securite · score 98</sub>  
   `AsyncFd::new` and related constructors violate I/O safety
-- [RUSTSEC-2026-0377: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0377.html)  
-  <sub>`rustsec` · securite · score 94</sub>  
-  `wasi-http` p3: forwarded trailers aren&apos;t checked against `is_forbidden_header` hook
-- [RUSTSEC-2026-0375: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0375.html)  
-  <sub>`rustsec` · securite · score 94</sub>  
-  `wasi-http` p3: Guests can set incorrect content-length for spliced response bodies
-- [RUSTSEC-2026-0376: Vulnerability in wasmtime-wasi-http](https://rustsec.org/advisories/RUSTSEC-2026-0376.html)  
-  <sub>`rustsec` · securite · score 94</sub>  
-  `wasi-http`: Guests can add conflicting content lengths to messages
-- [RUSTSEC-2026-0379: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0379.html)  
-  <sub>`rustsec` · securite · score 94</sub>  
-  Cranelift backend on aarch64 can jump to incorrect target on large Wasm `br_table` instruction
-- [RUSTSEC-2026-0378: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0378.html)  
-  <sub>`rustsec` · securite · score 94</sub>  
-  Panic lowering a host-created component model stream into a guest that expects a different payload type
+- [RUSTSEC-2026-0413: Vulnerability in rustls-ffi](https://rustsec.org/advisories/RUSTSEC-2026-0413.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Use-after-free of caller-owned server name in client connection constructors
+- [RUSTSEC-2026-0412: Vulnerability in cargo-nextest](https://rustsec.org/advisories/RUSTSEC-2026-0412.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Arbitrary code execution when rerunning tests from a portable recording
+- [RUSTSEC-2026-0393: Unsoundness in zstd](https://rustsec.org/advisories/RUSTSEC-2026-0393.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Out-of-bounds read when training a dictionary from inconsistent sample sizes
+- [RUSTSEC-2026-0392: Vulnerability in zstd](https://rustsec.org/advisories/RUSTSEC-2026-0392.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Uninitialized memory exposed by `write::Decoder` on a corrupt legacy frame
+- [RUSTSEC-2026-0391: Vulnerability in zstd](https://rustsec.org/advisories/RUSTSEC-2026-0391.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Data from an abandoned stream leaks into the next stream on a reused context
+- [RUSTSEC-2026-0394: Vulnerability in rustpython-vm](https://rustsec.org/advisories/RUSTSEC-2026-0394.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Build environment compiled into the library and readable at runtime
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-26 15:27 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-27 12:18 UTC
