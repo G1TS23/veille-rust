@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 27 octobre 2026
+## Top de la semaine — 28 octobre 2026
 
 - [Announcing rustup 1.29.2](https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
@@ -20,6 +20,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0386: Unsoundness in tokio](https://rustsec.org/advisories/RUSTSEC-2026-0386.html)  
   <sub>`rustsec` · securite · score 98</sub>  
   `AsyncFd::new` and related constructors violate I/O safety
+- [RUSTSEC-2026-0414: Vulnerability in pulldown-cmark](https://rustsec.org/advisories/RUSTSEC-2026-0414.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Exponential event growth with `ENABLE_WIKILINKS`
 - [RUSTSEC-2026-0413: Vulnerability in rustls-ffi](https://rustsec.org/advisories/RUSTSEC-2026-0413.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Use-after-free of caller-owned server name in client connection constructors
@@ -35,9 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0391: Vulnerability in zstd](https://rustsec.org/advisories/RUSTSEC-2026-0391.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Data from an abandoned stream leaks into the next stream on a reused context
-- [RUSTSEC-2026-0394: Vulnerability in rustpython-vm](https://rustsec.org/advisories/RUSTSEC-2026-0394.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Build environment compiled into the library and readable at runtime
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-27 14:54 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-28 13:01 UTC
