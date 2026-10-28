@@ -8,9 +8,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ## Top de la semaine — 28 octobre 2026
 
-- [Announcing rustup 1.29.2](https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/)  
-  <sub>`rust-blog` · officiel · score 105</sub>  
-  The rustup team is happy to announce the release of rustup version 1.29.2. Rustup is the recommended tool to install Rust, a programming language that empowers everyone to build reliable and efficient software. What's new in rustup 1.29.2 This is a small release which only updates the rustls-webpki and…
 - [How to fund Rust contributors](https://blog.rust-lang.org/2026/10/26/how-to-fund-rust-contributors/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   TLDR: To fund general maintenance, donate to the Rust Foundation Maintainers Fund or sponsor the RustNL Maintainers Team To fund specific features and improvements, sponsor fundable Rust Project Goals To fund individual contributors, donate to their GitHub Sponsors accounts There is always so much to do in the Rust…
@@ -38,6 +35,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0391: Vulnerability in zstd](https://rustsec.org/advisories/RUSTSEC-2026-0391.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Data from an abandoned stream leaks into the next stream on a reused context
+- [RUSTSEC-2026-0394: Vulnerability in rustpython-vm](https://rustsec.org/advisories/RUSTSEC-2026-0394.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Build environment compiled into the library and readable at runtime
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-28 13:01 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-28 15:25 UTC
