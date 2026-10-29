@@ -17,27 +17,27 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0386: Unsoundness in tokio](https://rustsec.org/advisories/RUSTSEC-2026-0386.html)  
   <sub>`rustsec` · securite · score 98</sub>  
   `AsyncFd::new` and related constructors violate I/O safety
+- [RUSTSEC-2026-0415: Vulnerability in juniper_hyper](https://rustsec.org/advisories/RUSTSEC-2026-0415.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Unbounded memory use on large request bodies
+- [RUSTSEC-2026-0417: Vulnerability in juniper](https://rustsec.org/advisories/RUSTSEC-2026-0417.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Excessive CPU and memory use on crafted GraphQL documents
+- [RUSTSEC-2026-0416: Vulnerability in juniper](https://rustsec.org/advisories/RUSTSEC-2026-0416.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Stack overflow on deeply nested GraphQL documents
+- [RUSTSEC-2026-0418: Vulnerability in libz-sys](https://rustsec.org/advisories/RUSTSEC-2026-0418.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  libz-sys build script leaks environment variables in the build directory
+- [RUSTSEC-2026-0419: Vulnerability in juniper_warp](https://rustsec.org/advisories/RUSTSEC-2026-0419.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Unbounded memory use on large request bodies
 - [RUSTSEC-2026-0414: Vulnerability in pulldown-cmark](https://rustsec.org/advisories/RUSTSEC-2026-0414.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Exponential event growth with `ENABLE_WIKILINKS`
 - [RUSTSEC-2026-0413: Vulnerability in rustls-ffi](https://rustsec.org/advisories/RUSTSEC-2026-0413.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Use-after-free of caller-owned server name in client connection constructors
-- [RUSTSEC-2026-0412: Vulnerability in cargo-nextest](https://rustsec.org/advisories/RUSTSEC-2026-0412.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Arbitrary code execution when rerunning tests from a portable recording
-- [RUSTSEC-2026-0393: Unsoundness in zstd](https://rustsec.org/advisories/RUSTSEC-2026-0393.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Out-of-bounds read when training a dictionary from inconsistent sample sizes
-- [RUSTSEC-2026-0392: Vulnerability in zstd](https://rustsec.org/advisories/RUSTSEC-2026-0392.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Uninitialized memory exposed by `write::Decoder` on a corrupt legacy frame
-- [RUSTSEC-2026-0391: Vulnerability in zstd](https://rustsec.org/advisories/RUSTSEC-2026-0391.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Data from an abandoned stream leaks into the next stream on a reused context
-- [RUSTSEC-2026-0394: Vulnerability in rustpython-vm](https://rustsec.org/advisories/RUSTSEC-2026-0394.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Build environment compiled into the library and readable at runtime
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-29 13:08 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-29 15:31 UTC
