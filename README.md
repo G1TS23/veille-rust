@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 30 octobre 2026
+## Top de la semaine — 31 octobre 2026
 
 - [This Week in Rust 675](https://this-week-in-rust.org/blog/2026/10/28/this-week-in-rust-675/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
@@ -14,9 +14,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [How to fund Rust contributors](https://blog.rust-lang.org/2026/10/26/how-to-fund-rust-contributors/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   TLDR: To fund general maintenance, donate to the Rust Foundation Maintainers Fund or sponsor the RustNL Maintainers Team To fund specific features and improvements, sponsor fundable Rust Project Goals To fund individual contributors, donate to their GitHub Sponsors accounts There is always so much to do in the Rust…
-- [RUSTSEC-2026-0386: Unsoundness in tokio](https://rustsec.org/advisories/RUSTSEC-2026-0386.html)  
-  <sub>`rustsec` · securite · score 98</sub>  
-  `AsyncFd::new` and related constructors violate I/O safety
 - [RUSTSEC-2026-0427: Vulnerability in sn-releases](https://rustsec.org/advisories/RUSTSEC-2026-0427.html)  
   <sub>`rustsec` · securite · score 95</sub>  
   `sn-releases`: `extract_release_archive` writes archive entries without a path-traversal check (zip-slip)
@@ -38,6 +35,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0425: Vulnerability in nix-nar](https://rustsec.org/advisories/RUSTSEC-2026-0425.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   `nix-nar`: `Decoder::unpack` writes archive entries outside the destination directory (path traversal)
+- [RUSTSEC-2026-0428: Vulnerability in orion](https://rustsec.org/advisories/RUSTSEC-2026-0428.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  BLAKE2b produces wrong tag when using `reset()` with a different-length key
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-30 15:18 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-10-31 12:39 UTC
