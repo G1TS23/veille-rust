@@ -17,27 +17,27 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0434: Vulnerability in ant-releases](https://rustsec.org/advisories/RUSTSEC-2026-0434.html)  
   <sub>`rustsec` · securite · score 95</sub>  
   `ant-releases`: extracting a release archive can write files outside the destination directory (path traversal / zip-slip)
-- [RUSTSEC-2026-0437: Vulnerability in azure_security_keyvault_certificates](https://rustsec.org/advisories/RUSTSEC-2026-0437.html)  
+- [RUSTSEC-2026-0443: Vulnerability in actix-files](https://rustsec.org/advisories/RUSTSEC-2026-0443.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Rejected authentication challenges can poison the Key Vault scope cache
-- [RUSTSEC-2026-0438: Vulnerability in azure_security_keyvault_secrets](https://rustsec.org/advisories/RUSTSEC-2026-0438.html)  
+  Hidden file disclosure through Windows short names
+- [RUSTSEC-2026-0444: astral-tl is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0444.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Rejected authentication challenges can poison the Key Vault scope cache
-- [RUSTSEC-2026-0439: Vulnerability in azure_security_keyvault_keys](https://rustsec.org/advisories/RUSTSEC-2026-0439.html)  
+  `astral-tl` is unmaintained
+- [RUSTSEC-2026-0447: Vulnerability in actix-web](https://rustsec.org/advisories/RUSTSEC-2026-0447.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Rejected authentication challenges can poison the Key Vault scope cache
-- [RUSTSEC-2026-0440: astral-tokio-tar is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0440.html)  
+  Compressed request bodies can exhaust memory before extractor limits apply
+- [RUSTSEC-2026-0445: Vulnerability in vodozemac](https://rustsec.org/advisories/RUSTSEC-2026-0445.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  `astral-tokio-tar` is unmaintained
-- [RUSTSEC-2026-0441: pin-utils is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0441.html)  
+  Degraded secret zeroization capabilities
+- [RUSTSEC-2026-0451: Vulnerability in vodozemac](https://rustsec.org/advisories/RUSTSEC-2026-0451.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  `pin-utils` is unmaintained
-- [RUSTSEC-2026-0442: Unsoundness in arrow-data](https://rustsec.org/advisories/RUSTSEC-2026-0442.html)  
+  Degraded secret zeroization capabilities
+- [RUSTSEC-2026-0452: Vulnerability in surrealkv](https://rustsec.org/advisories/RUSTSEC-2026-0452.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Apache Arrow Rust: Improper validation of RunEndEncoded arrays allows out of bounds reads
-- [RUSTSEC-2026-0436: Vulnerability in calamine](https://rustsec.org/advisories/RUSTSEC-2026-0436.html)  
+  Out-of-bounds read when decoding internal keys shorter than 16 bytes
+- [RUSTSEC-2026-0453: Vulnerability in surrealdb](https://rustsec.org/advisories/RUSTSEC-2026-0453.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Panic and unbounded allocation (OOM) in the CFB/OLE2 parser on malformed input
+  Use-after-free in KV backends via leaked `affinitypool::spawn_local` future
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-06 14:21 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-06 16:14 UTC
