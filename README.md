@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 6 novembre 2026
+## Top de la semaine — 7 novembre 2026
 
 - [Announcing rustup 1.29.3](https://blog.rust-lang.org/2026/11/03/Rustup-1.29.3/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-06 16:14 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-07 13:09 UTC
