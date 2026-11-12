@@ -6,38 +6,38 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 11 novembre 2026
+## Top de la semaine — 12 novembre 2026
 
 - [Google Summer of Code 2026 results](https://blog.rust-lang.org/2026/11/11/gsoc-2026-results/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   The Rust Project participated in Google Summer of Code (GSoC) for the third time this year. This time we had 13 projects, and our dear contributors have been working very hard on them for several months. As usual, the projects had various durations, so while some of them have ended in August, the last one has only…
-- [This Week in Rust 676](https://this-week-in-rust.org/blog/2026/11/04/this-week-in-rust-676/)  
-  <sub>`twir` · newsletter, must-read · score 100</sub>  
-  Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
-- [RUSTSEC-2026-0480: Vulnerability in tdx_workload_attestation](https://rustsec.org/advisories/RUSTSEC-2026-0480.html)  
+- [RUSTSEC-2026-0521: Vulnerability in hickory-recursor](https://rustsec.org/advisories/RUSTSEC-2026-0521.html)  
+  <sub>`rustsec` · securite · score 95</sub>  
+  Recursor followed every glueless name server in a referral (no fixed hickory-recursor release)
+- [RUSTSEC-2026-0522: Vulnerability in hickory-recursor](https://rustsec.org/advisories/RUSTSEC-2026-0522.html)  
+  <sub>`rustsec` · securite · score 95</sub>  
+  Recursor kept querying cyclic glueless sibling delegations (no fixed hickory-recursor release)
+- [RUSTSEC-2024-0450: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2024-0450.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Panic on a GCP launch endorsement without TDX measurements
-- [RUSTSEC-2026-0481: Vulnerability in tdx_workload_attestation](https://rustsec.org/advisories/RUSTSEC-2026-0481.html)  
+  Memory exhaustion from an unchecked SSH packet length
+- [RUSTSEC-2026-0494: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0494.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  `verify_x509_cert` does not check the certificate validity period
-- [RUSTSEC-2026-0482: Vulnerability in cap-primitives](https://rustsec.org/advisories/RUSTSEC-2026-0482.html)  
+  SSH message fields allocated before their size is checked
+- [RUSTSEC-2026-0493: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0493.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Paths or symlinks ending in a slash escape the sandbox
-- [RUSTSEC-2026-0483: lwd-uri-util contained malicious code](https://rustsec.org/advisories/RUSTSEC-2026-0483.html)  
+  No limit on the size of a decompressed SSH packet
+- [RUSTSEC-2026-0496: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0496.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  `lwd-uri-util` was removed from crates.io for malicious code
-- [RUSTSEC-2026-0490: Vulnerability in hickory-proto](https://rustsec.org/advisories/RUSTSEC-2026-0490.html)  
+  Pre-authentication allocation from the keyboard-interactive response count
+- [RUSTSEC-2026-0495: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0495.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Zone file lexer panics on a token of 4096 or more characters
-- [RUSTSEC-2026-0491: Vulnerability in hickory-proto](https://rustsec.org/advisories/RUSTSEC-2026-0491.html)  
+  Agent server signs with confirm-constrained keys without calling `Agent::confirm`
+- [RUSTSEC-2026-0492: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0492.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Memory amplification from record counts in the DNS message header
-- [RUSTSEC-2026-0489: Vulnerability in hickory-proto](https://rustsec.org/advisories/RUSTSEC-2026-0489.html)  
+  Client `Handler` callbacks run for channels the client never opened
+- [RUSTSEC-2026-0510: Vulnerability in vodozemac](https://rustsec.org/advisories/RUSTSEC-2026-0510.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Panic when an SVCB or HTTPS parameter value is a single quote character
-- [RUSTSEC-2026-0487: Vulnerability in hickory-proto](https://rustsec.org/advisories/RUSTSEC-2026-0487.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Panic on a malformed `alpn` value when parsing SVCB or HTTPS records from text
+  Panic when decoding malformed Ed25519 keys from Base64
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-11 16:34 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-12 15:20 UTC
