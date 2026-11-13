@@ -6,8 +6,14 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 12 novembre 2026
+## Top de la semaine — 13 novembre 2026
 
+- [This Week in Rust 677](https://this-week-in-rust.org/blog/2026/11/11/this-week-in-rust-677/)  
+  <sub>`twir` · newsletter, must-read · score 100</sub>  
+  Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
+- [Announcing Rust 1.100.0](https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/)  
+  <sub>`rust-blog` · officiel · score 100</sub>  
+  The Rust team is happy to announce a new version of Rust, 1.100.0. Rust is a programming language empowering everyone to build reliable and efficient software. If you have a previous version of Rust installed via rustup, you can get 1.100.0 with: $ rustup update stable If you don't have it already, you can get rustup…
 - [Google Summer of Code 2026 results](https://blog.rust-lang.org/2026/11/11/gsoc-2026-results/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   The Rust Project participated in Google Summer of Code (GSoC) for the third time this year. This time we had 13 projects, and our dear contributors have been working very hard on them for several months. As usual, the projects had various durations, so while some of them have ended in August, the last one has only…
@@ -17,27 +23,21 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0522: Vulnerability in hickory-recursor](https://rustsec.org/advisories/RUSTSEC-2026-0522.html)  
   <sub>`rustsec` · securite · score 95</sub>  
   Recursor kept querying cyclic glueless sibling delegations (no fixed hickory-recursor release)
-- [RUSTSEC-2024-0450: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2024-0450.html)  
+- [RUSTSEC-2026-0533: Vulnerability in ammonia](https://rustsec.org/advisories/RUSTSEC-2026-0533.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Incorrect handling of embedded SVG and MathML leads to mutation XSS
+- [RUSTSEC-2026-0524: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0524.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Memory exhaustion from an unchecked SSH packet length
-- [RUSTSEC-2026-0494: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0494.html)  
+  Long Retry token can panic or exhaust memory in a QUIC client
+- [RUSTSEC-2026-0523: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0523.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  SSH message fields allocated before their size is checked
-- [RUSTSEC-2026-0493: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0493.html)  
+  MAX_STREAM_DATA frame can open streams beyond the stream limit
+- [RUSTSEC-2026-0525: Vulnerability in libp2p-quic](https://rustsec.org/advisories/RUSTSEC-2026-0525.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  No limit on the size of a decompressed SSH packet
-- [RUSTSEC-2026-0496: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0496.html)  
+  Remote panic when a peer certificate expires during the QUIC handshake
+- [RUSTSEC-2026-0526: Vulnerability in libp2p-rendezvous](https://rustsec.org/advisories/RUSTSEC-2026-0526.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Pre-authentication allocation from the keyboard-interactive response count
-- [RUSTSEC-2026-0495: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0495.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Agent server signs with confirm-constrained keys without calling `Agent::confirm`
-- [RUSTSEC-2026-0492: Vulnerability in russh](https://rustsec.org/advisories/RUSTSEC-2026-0492.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Client `Handler` callbacks run for channels the client never opened
-- [RUSTSEC-2026-0510: Vulnerability in vodozemac](https://rustsec.org/advisories/RUSTSEC-2026-0510.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Panic when decoding malformed Ed25519 keys from Base64
+  Rendezvous server accepted unlimited registrations per peer
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-12 17:02 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-13 14:40 UTC
