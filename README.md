@@ -6,8 +6,11 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 15 novembre 2026
+## Top de la semaine — 16 novembre 2026
 
+- [Enabling the parallel frontend on nightly](https://blog.rust-lang.org/2026/11/16/enabling-parallel-frontend-on-nightly/)  
+  <sub>`rust-blog` · officiel · score 105</sub>  
+  TL;DR: We are enabling the parallel frontend of the Rust compiler on nightly by default, to find remaining issues in preparation for its stabilization. Context The Rust compiler has been using multiple threads to compile code in its "backend" part (using LLVM) for a long time. However, its "frontend" part (which…
 - [This Week in Rust 677](https://this-week-in-rust.org/blog/2026/11/11/this-week-in-rust-677/)  
   <sub>`twir` · newsletter, must-read · score 100</sub>  
   Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
@@ -35,9 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0525: Vulnerability in libp2p-quic](https://rustsec.org/advisories/RUSTSEC-2026-0525.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Remote panic when a peer certificate expires during the QUIC handshake
-- [RUSTSEC-2026-0526: Vulnerability in libp2p-rendezvous](https://rustsec.org/advisories/RUSTSEC-2026-0526.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Rendezvous server accepted unlimited registrations per peer
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-15 15:51 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-16 15:53 UTC
