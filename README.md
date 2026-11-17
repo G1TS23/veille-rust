@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 16 novembre 2026
+## Top de la semaine — 17 novembre 2026
 
 - [Enabling the parallel frontend on nightly](https://blog.rust-lang.org/2026/11/16/enabling-parallel-frontend-on-nightly/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
@@ -29,15 +29,15 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0533: Vulnerability in ammonia](https://rustsec.org/advisories/RUSTSEC-2026-0533.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Incorrect handling of embedded SVG and MathML leads to mutation XSS
-- [RUSTSEC-2026-0524: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0524.html)  
+- [RUSTSEC-2026-0542: humantime is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0542.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Long Retry token can panic or exhaust memory in a QUIC client
-- [RUSTSEC-2026-0523: Vulnerability in quinn-proto](https://rustsec.org/advisories/RUSTSEC-2026-0523.html)  
+  humantime is unmaintained
+- [RUSTSEC-2026-0543: chrono is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0543.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  MAX_STREAM_DATA frame can open streams beyond the stream limit
-- [RUSTSEC-2026-0525: Vulnerability in libp2p-quic](https://rustsec.org/advisories/RUSTSEC-2026-0525.html)  
+  chrono is unmaintained
+- [RUSTSEC-2026-0544: Vulnerability in libz-sys](https://rustsec.org/advisories/RUSTSEC-2026-0544.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  Remote panic when a peer certificate expires during the QUIC handshake
+  libs-sys: heap buffer overflow
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-16 18:53 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-17 16:06 UTC
