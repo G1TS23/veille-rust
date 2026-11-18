@@ -6,7 +6,7 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 17 novembre 2026
+## Top de la semaine — 18 novembre 2026
 
 - [Enabling the parallel frontend on nightly](https://blog.rust-lang.org/2026/11/16/enabling-parallel-frontend-on-nightly/)  
   <sub>`rust-blog` · officiel · score 105</sub>  
@@ -17,9 +17,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [Announcing Rust 1.100.0](https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/)  
   <sub>`rust-blog` · officiel · score 100</sub>  
   The Rust team is happy to announce a new version of Rust, 1.100.0. Rust is a programming language empowering everyone to build reliable and efficient software. If you have a previous version of Rust installed via rustup, you can get 1.100.0 with: $ rustup update stable If you don't have it already, you can get rustup…
-- [Google Summer of Code 2026 results](https://blog.rust-lang.org/2026/11/11/gsoc-2026-results/)  
-  <sub>`rust-blog` · officiel · score 100</sub>  
-  The Rust Project participated in Google Summer of Code (GSoC) for the third time this year. This time we had 13 projects, and our dear contributors have been working very hard on them for several months. As usual, the projects had various durations, so while some of them have ended in August, the last one has only…
 - [RUSTSEC-2026-0521: Vulnerability in hickory-recursor](https://rustsec.org/advisories/RUSTSEC-2026-0521.html)  
   <sub>`rustsec` · securite · score 95</sub>  
   Recursor followed every glueless name server in a referral (no fixed hickory-recursor release)
@@ -29,15 +26,18 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0533: Vulnerability in ammonia](https://rustsec.org/advisories/RUSTSEC-2026-0533.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Incorrect handling of embedded SVG and MathML leads to mutation XSS
-- [RUSTSEC-2026-0542: humantime is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0542.html)  
+- [RUSTSEC-2026-0564: Vulnerability in lettre](https://rustsec.org/advisories/RUSTSEC-2026-0564.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  humantime is unmaintained
-- [RUSTSEC-2026-0543: chrono is unmaintained](https://rustsec.org/advisories/RUSTSEC-2026-0543.html)  
+  Panic on a mailbox display name containing CR or LF allows denial of service
+- [RUSTSEC-2026-0562: Vulnerability in lettre](https://rustsec.org/advisories/RUSTSEC-2026-0562.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  chrono is unmaintained
-- [RUSTSEC-2026-0544: Vulnerability in libz-sys](https://rustsec.org/advisories/RUSTSEC-2026-0544.html)  
+  Panic on an `EHLO` reply line of only white space allows denial of service
+- [RUSTSEC-2026-0561: Vulnerability in lettre](https://rustsec.org/advisories/RUSTSEC-2026-0561.html)  
   <sub>`rustsec` · securite · score 90</sub>  
-  libs-sys: heap buffer overflow
+  Missing dot-stuffing after a bare LF or CR allows SMTP command injection
+- [RUSTSEC-2026-0563: Vulnerability in lettre](https://rustsec.org/advisories/RUSTSEC-2026-0563.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  Messages for an address with a quoted local part are sent to a different address
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-17 17:51 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-18 15:43 UTC
