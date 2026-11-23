@@ -6,11 +6,8 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 22 novembre 2026
+## Top de la semaine — 23 novembre 2026
 
-- [Enabling the parallel frontend on nightly](https://blog.rust-lang.org/2026/11/16/enabling-parallel-frontend-on-nightly/)  
-  <sub>`rust-blog` · officiel · score 105</sub>  
-  TL;DR: We are enabling the parallel frontend of the Rust compiler on nightly by default, to find remaining issues in preparation for its stabilization. Context The Rust compiler has been using multiple threads to compile code in its "backend" part (using LLVM) for a long time. However, its "frontend" part (which…
 - [RUSTSEC-2026-0566: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0566.html)  
   <sub>`rustsec` · securite · score 102</sub>  
   wasmtime-wasi: Unbounded host memory growth via empty writes to `AsyncWriteStream`
@@ -38,6 +35,9 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0568: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0568.html)  
   <sub>`rustsec` · securite · score 94</sub>  
   Stale GC heap base pointer in compiled code lets a Wasm guest abort the host process
+- [RUSTSEC-2026-0573: Vulnerability in wasmtime](https://rustsec.org/advisories/RUSTSEC-2026-0573.html)  
+  <sub>`rustsec` · securite · score 94</sub>  
+  Process abort when a GC heap&apos;s reservation isn&apos;t a multiple of the page size
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-22 14:39 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-23 18:17 UTC
