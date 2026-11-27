@@ -6,11 +6,20 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 
 ---
 
-## Top de la semaine — 26 novembre 2026
+## Top de la semaine — 27 novembre 2026
 
-- [RUSTSEC-2026-0587: Vulnerability in wasmtime-wasi](https://rustsec.org/advisories/RUSTSEC-2026-0587.html)  
+- [This Week in Rust 679](https://this-week-in-rust.org/blog/2026/11/25/this-week-in-rust-679/)  
+  <sub>`twir` · newsletter, must-read · score 100</sub>  
+  Hello and welcome to another issue of This Week in Rust! Rust is a programming language empowering everyone to build reliable and efficient software. This is a weekly summary of its progress and community. Want something mentioned? Tag us at @thisweekinrust.bsky.social on Bluesky or @ThisWeekinRust on mastodon.social,…
+- [RUSTSEC-2026-0602: Vulnerability in dryoc](https://rustsec.org/advisories/RUSTSEC-2026-0602.html)  
   <sub>`rustsec` · securite · score 94</sub>  
-  WASI filesystem sandbox escape on Windows through a drive-prefixed path component
+  Ed25519 signing key pairs with an inconsistent embedded public key are accepted
+- [RUSTSEC-2026-0603: Vulnerability in dryoc](https://rustsec.org/advisories/RUSTSEC-2026-0603.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  X25519 accepts low-order public keys, yielding session keys computable without a private key
+- [RUSTSEC-2026-0601: Vulnerability in wsts](https://rustsec.org/advisories/RUSTSEC-2026-0601.html)  
+  <sub>`rustsec` · securite · score 90</sub>  
+  FROST coordinator accepts unvalidated DKG polynomial commitments
 - [RUSTSEC-2026-0600: Vulnerability in kube-client](https://rustsec.org/advisories/RUSTSEC-2026-0600.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   `openssl-tls` trusts OpenSSL&apos;s default CA store in addition to the configured cluster CA
@@ -29,15 +38,6 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - [RUSTSEC-2026-0595: Unsoundness in parquet](https://rustsec.org/advisories/RUSTSEC-2026-0595.html)  
   <sub>`rustsec` · securite · score 90</sub>  
   Apache Arrow Rust: Bloom filters written as plaintext when writing encrypted Parquet
-- [RUSTSEC-2026-0594: Vulnerability in cookie](https://rustsec.org/advisories/RUSTSEC-2026-0594.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Private cookie nonces can repeat in processes that fork
-- [RUSTSEC-2026-0593: Vulnerability in pqcrypto-dilithium](https://rustsec.org/advisories/RUSTSEC-2026-0593.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Dilithium verification accepts non-conforming signatures with the `avx2` feature
-- [RUSTSEC-2026-0592: Vulnerability in url](https://rustsec.org/advisories/RUSTSEC-2026-0592.html)  
-  <sub>`rustsec` · securite · score 90</sub>  
-  Stack overflow in `Url::origin()` on nested `blob:` URLs
 
 ---
 
@@ -50,4 +50,4 @@ Veille automatisée sur l'écosystème Rust : 13 sources agrégées chaque jour 
 - `content/digests/` — un digest par jour, publié via Zola sur GitHub Pages.
 - `notes/` — les notes écrites à la main. C'est ce qui distingue ce repo d'un lecteur RSS.
 
-Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-26 16:58 UTC
+Collecte quotidienne à 06:17 et 08:43 UTC · dernière trouvaille 2026-11-27 16:44 UTC
